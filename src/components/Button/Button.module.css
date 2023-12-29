@@ -1,0 +1,82 @@
+.button {
+  border: 1px solid white;
+  border-radius: 8px;
+  width: 148px;
+  height: 42px;
+  background-color: transparent;
+  cursor: pointer;
+  min-width: 30px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.btn_modal {
+  border: 1px solid black;
+  color: black;
+  margin-right: 15px;
+}
+
+.btn_modal:last-child {
+  margin-right: 0;
+}
+.btn_modal:hover,
+.btn_modal:focus,
+.btn_modal:active {
+  border: 1px solid #ff6b01;
+  background-color: #ff6b01;
+  color: white;
+}
+
+.btn_modal_auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  border: 1px solid black;
+  color: black;
+  margin-bottom: 24px;
+}
+
+.btn_modal_auth:last-child {
+  margin-right: 0;
+}
+.btn_modal_auth:hover,
+.btn_modal_auth:focus,
+.btn_modal_auth:active {
+  border: 1px solid #ff6b01;
+  background-color: #ff6b01;
+  color: white;
+}
+
+.btn_header:hover,
+.btn_header:focus,
+.btn_header:active {
+  border: 1px solid #ff6b01;
+  background-color: #ff6b01;
+  color: white;
+}
+
+.active_btn {
+  border: 1px solid #ff6b01;
+  background-color: #ff6b01;
+  color: white;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.search_button {
+  border: transparent;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
