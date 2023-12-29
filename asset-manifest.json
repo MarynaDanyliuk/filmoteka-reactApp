@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/filmoteka_reactApp/static/css/main.7acaea2f.css",
-    "main.js": "/filmoteka_reactApp/static/js/main.07d3183d.js",
+    "main.css": "/filmoteka_reactApp/static/css/main.071458b3.css",
+    "main.js": "/filmoteka_reactApp/static/js/main.94dd707c.js",
+    "static/media/icons.svg": "/filmoteka_reactApp/static/media/icons.04c71595bfb274435b66cdd0dedb990b.svg",
     "index.html": "/filmoteka_reactApp/index.html",
-    "main.7acaea2f.css.map": "/filmoteka_reactApp/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/filmoteka_reactApp/static/js/main.07d3183d.js.map"
+    "main.071458b3.css.map": "/filmoteka_reactApp/static/css/main.071458b3.css.map",
+    "main.94dd707c.js.map": "/filmoteka_reactApp/static/js/main.94dd707c.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.071458b3.css",
+    "static/js/main.94dd707c.js"
   ]
 }
