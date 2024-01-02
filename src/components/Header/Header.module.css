@@ -9,9 +9,9 @@
 
 .header {
   background-image: url(../../images/abstract-background-with-red-lines_1x.jpg);
-
   background-position: center;
-  background-size: auto auto;
+  background-size: cover;
+  /* background-size: auto auto; */
 }
 
 .header_nav {

@@ -2,7 +2,7 @@ import css from '../Header/Header.module.css';
 
 import icons from '../../images/icons.svg';
 
-import HeaderHomePage from './HeaderHomePage/HeaderHomePage';
+import SearchForm from './SearchForm/SearchForm';
 // import HeaderLibraryPage from './HeaderLibraryPage/HeaderLibraryPage';
 
 // const getClassName = ({ isActive }) => {
@@ -36,7 +36,7 @@ const Header = () => {
             </ul>
           </div>
 
-          <HeaderHomePage />
+          <SearchForm />
           {/* <HeaderLibraryPage /> */}
         </div>
       </div>

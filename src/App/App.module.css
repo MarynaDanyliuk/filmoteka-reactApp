@@ -1,4 +1,11 @@
 /* @import '~node_modules/modern-normalize/modern-normalize.css'; */
+@import-normalize;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -33,7 +40,6 @@ img {
   display: block;
 }
 
-/* .container {
-  padding-left: 32px;
-  padding-right: 32px;
+/* .section {
+  margin-bottom: 60px;
 } */

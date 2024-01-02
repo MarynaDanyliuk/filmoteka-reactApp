@@ -1,25 +1,23 @@
-import css from '../HeaderHomePage/HeaderHomePage.module.css';
+import css from '../SearchForm/SearchForm.module.css';
 import { Button } from 'components/Button/Button';
 
-const HeaderHomePage = () => {
+const SearchForm = () => {
   return (
-    <div className={css.form_wrapper}>
-      <form className={css.form} id="header-content">
-        <input
-          type="text"
-          id="search-input"
-          className={css.search_input}
-          name="searchQuery"
-          autoComplete="off"
-          placeholder="Search films..."
-        />
-        <Button />
-      </form>
-    </div>
+    <form className={css.form} id="header-content">
+      <input
+        type="text"
+        id="search-input"
+        className={css.search_input}
+        name="searchQuery"
+        autoComplete="off"
+        placeholder="Search films..."
+      />
+      <Button />
+    </form>
   );
 };
 
-export default HeaderHomePage;
+export default SearchForm;
 
 // _______________
 //  className = { getClassName };

@@ -1,9 +1,9 @@
 import Gallery from 'components/Gallery/Gallery';
 import LoadMoreButton from 'components/LoadMoreButton/LoadMoreButton';
 
-import css from '../HomePage/HomePage.module.css';
+import css from '../LibraryPage/LibraryPage.module.css';
 
-const HomePage = () => {
+const LibraryPage = () => {
   return (
     <div className={css.section}>
       <div className={css.container}>
@@ -14,4 +14,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default LibraryPage;
