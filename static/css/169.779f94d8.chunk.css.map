@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/169.779f94d8.chunk.css","mappings":"AAAA,0BACE,kBACF,CAEA,4BAGE,qBAAsB,CAFtB,iBAAkB,CAClB,kBAEF","sources":["pages/LoginPage/LoginPage.module.css"],"sourcesContent":[".section {\n  margin-bottom: 60px;\n}\n\n.container {\n  padding-left: 32px;\n  padding-right: 32px;\n  background-color: aqua;\n}\n"],"names":[],"sourceRoot":""}
