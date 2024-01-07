@@ -8,7 +8,7 @@ const RegisterPage = props => {
   return (
     <div className={css.section}>
       <div className={css.container}>
-        <hi>Register Page</hi>
+        <hi className={css.title}>Register Page</hi>
       </div>
     </div>
   );

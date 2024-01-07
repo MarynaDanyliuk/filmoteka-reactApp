@@ -3,8 +3,8 @@ import { Navigate } from 'react-router-dom';
 
 // import { getAuth } from '../../redux/auth/auth-selectors';
 
-const PrivateRoute = () => {
-  return <Navigate to="/login" />;
+const PublicRoute = () => {
+  return <Navigate to="/" />;
   //   const { isLogin, token } = useSelector(getAuth);
 
   //   if (!isLogin && token) {
@@ -18,4 +18,4 @@ const PrivateRoute = () => {
   //   return <Outlet />;
 };
 
-export default PrivateRoute;
+export default PublicRoute;

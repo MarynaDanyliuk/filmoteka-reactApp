@@ -10,10 +10,10 @@ import PublicRoute from '../Routes/PublicRoutes/PublicRoutes';
 import PrivateRoute from '../Routes/PrivateRoutes/PrivateRoutes';
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
-const LibraryPage = lazy(() => import('pages/LibraryPage/LibraryPage'));
+const LibraryPage = lazy(() => import('../pages/LibraryPage/LibraryPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
-// const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
+const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
 export const App = () => {
   return (
@@ -22,6 +22,7 @@ export const App = () => {
       <Suspense>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
+
           <Route element={<PublicRoute />}>
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
@@ -29,6 +30,7 @@ export const App = () => {
           <Route element={<PrivateRoute />}>
             <Route path="/library" element={<LibraryPage />}></Route>
           </Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </div>

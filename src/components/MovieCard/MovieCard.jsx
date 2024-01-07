@@ -1,37 +1,35 @@
-
 import css from './MovieCard.module.css';
 
-export const MovieCard = () => {
-  const data = {
-    //   url: '',
-    //   posterPath: '',
-    id: '435363',
-    originalTitle: 'Barbie',
-    //   releaseData: '',
-    voteAverage: '4',
-    //   genres: '',
-    //   genreIds: '',
-  };
+export const MovieCard = ({ item }) => {
+  const {
+    poster_path,
+    original_title,
+    id,
+    // genre_ids,
+    // genres,
+    // release_date,
+    vote_average,
+  } = item;
 
   const releaseYear = '2022';
+  const url = `https://image.tmdb.org/t/p/w500${poster_path}`;
   return (
-    <li className={css.gallery_card}>
-      <a className="gallery_link" href={data.url}>
-        Привіт світ
+    <li key={id} className={css.gallery_card}>
+      <a className={css.gallery_link} href={url}>
         <img
-          id={data.id}
-          className="movie_img"
-          src={data.url}
-          alt={data.originalTitle}
-          loading="lazy"
+          id={item.id}
+          className={css.movie_img}
+          src={url}
+          alt={item.originalTitle}
+          // loading="lazy"
         />
-        <p className="movie_title card">{data.originalTitle}</p>
-        <div className="movie_describtion">
-          <ul className="movie_genresList">
+        <p className={css.movie_title}>{original_title}</p>
+        <div className={css.movie_describtion}>
+          <ul className={css.movie_genresList}>
             {/* {renderGenres(data.genres, data.genreIds)} */}
           </ul>
           <p>{releaseYear}</p>
-          {/* <p className="movie_average">{data.voteAverage.toFixed(1)}</p> */}
+          <p className={css.movie_average}>{vote_average.toFixed(1)}</p>
         </div>
       </a>
     </li>

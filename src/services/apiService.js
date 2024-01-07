@@ -1,5 +1,6 @@
 import axios from 'axios';
 const API_KEY = '6de1479941bef67a0c224787b78603f1';
+const BASE_URL = 'https://api.themoviedb.org/3/';
 
 const instance = axios.create({
   baseURL: 'https://api.themoviedb.org/3/',
@@ -75,4 +76,77 @@ export default class fetchApiMovies {
   set movieId(newMovieId) {
     return (this._movieId = newMovieId);
   }
+}
+
+// _____________________fetch func_____________________________________
+export async function fetchMovies() {
+  const options = {
+    method: 'GET',
+    headers: { accept: 'application/json' },
+  };
+
+  const response = await fetch(
+    `${BASE_URL}/trending/movie/day?api_key=${API_KEY}`,
+    options
+  );
+
+  const res = await response.json();
+
+  const movies = await res.results;
+
+  return movies;
+}
+
+export async function fetchMoviesByQuery(query) {
+  const options = {
+    method: 'GET',
+    headers: { accept: 'application/json' },
+  };
+
+  const response = await fetch(
+    `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${query}&include_adult=false&language=en-US&page=1`,
+    options
+  );
+
+  const res = await response.json();
+
+  const movies = await res.results;
+
+  return movies;
+}
+
+export async function fetchMovieDetailsById(movieId) {
+  const options = { method: 'GET', headers: { accept: 'application/json' } };
+
+  const response = await fetch(
+    `${BASE_URL}/movie/${movieId}?api_key=${API_KEY}`,
+    options
+  );
+
+  const res = await response.json();
+
+  return res;
+}
+
+export async function fetchMoviesByPage(page) {
+  const options = {
+    method: 'GET',
+    headers: { accept: 'application/json' },
+  };
+
+  const response = await fetch(
+    `${BASE_URL}/trending/movie/day?api_key=${API_KEY}&page=${page}`,
+    options
+  );
+
+  const res = await response.json();
+
+  return res;
+}
+
+export async function fetchGenresListByIds() {
+  const response = await instance.get(
+    `/genre/movie/list?api_key=${API_KEY}&language=en`
+  );
+  return response.data.genres;
 }

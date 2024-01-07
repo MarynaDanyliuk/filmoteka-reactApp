@@ -8,7 +8,7 @@ const LoginPage = props => {
   return (
     <div className={css.section}>
       <div className={css.container}>
-        <hi>Login Page</hi>
+        <hi className={css.title}>Login Page</hi>
       </div>
     </div>
   );
