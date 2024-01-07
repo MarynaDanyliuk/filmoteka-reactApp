@@ -1,4 +1,4 @@
-import css from '../HeaderLibraryPage/HeaderLibraryPage.module.css';
+import css from '../NavigationLibrary/NavigationLibrary.module.css';
 
 // import { NavLink } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ import css from '../HeaderLibraryPage/HeaderLibraryPage.module.css';
 //   return className;
 // };
 
-const HeaderLibraryPage = () => {
+const NavigationLibrary = () => {
   return (
     <div>
       <ul className={css.nav_list_button}>
@@ -26,7 +26,7 @@ const HeaderLibraryPage = () => {
   );
 };
 
-export default HeaderLibraryPage;
+export default NavigationLibrary;
 
 // className={css.nav_button}
 // className={css.nav_button}

@@ -3,6 +3,8 @@ import css from '../Header/Header.module.css';
 import icons from '../../images/icons.svg';
 
 import SearchForm from './SearchForm/SearchForm';
+
+import { NavLink } from 'react-router-dom';
 // import HeaderLibraryPage from './HeaderLibraryPage/HeaderLibraryPage';
 
 // const getClassName = ({ isActive }) => {
@@ -16,22 +18,22 @@ const Header = () => {
       <div className={css.header}>
         <div className={css.container}>
           <div className={css.header_nav}>
-            <a href="#/" className={css.nav_item}>
+            <NavLink to="/" className={css.nav_item}>
               <svg className={css.icon} width="16" height="16">
                 <use href={icons + '#icon-film'}></use>
               </svg>
               Filmoteka
-            </a>
+            </NavLink>
             <ul className={css.nav_list}>
               <li>
-                <a href="/" className={css.nav_item}>
+                <NavLink to="/" className={css.nav_item}>
                   Home
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="/library" className={css.nav_item}>
+                <NavLink to="/library" className={css.nav_item}>
                   My Library
-                </a>
+                </NavLink>
               </li>
             </ul>
           </div>
