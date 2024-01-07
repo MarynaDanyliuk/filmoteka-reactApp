@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[743],{743:function(e,t,r){r.r(t),r.d(t,{default:function(){return c}});var n="RegisterPage_section__GPz-D",s="RegisterPage_container__l-2BF",a=r(184),c=function(e){return console.log(e),(0,a.jsx)("div",{className:n,children:(0,a.jsx)("div",{className:s,children:(0,a.jsx)("hi",{children:"Register Page"})})})}}}]);
-//# sourceMappingURL=743.5348925c.chunk.js.map
