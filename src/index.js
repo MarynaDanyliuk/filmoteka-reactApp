@@ -6,7 +6,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="filmoteka_reactApp">
+    <BrowserRouter basename="filmoteka-reactApp">
       <App />
     </BrowserRouter>
   </React.StrictMode>
