@@ -2,7 +2,7 @@
   "name": "react-homework-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://marynadanyliuk.github.io/filmoteka_reactApp/",
+  "homepage": "https://marynadanyliuk.github.io/filmoteka-reactApp/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
