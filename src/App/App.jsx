@@ -1,15 +1,15 @@
 import css from '../App/App.module.css';
 import React, { lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import Header from 'components/Header/Header';
+import Header from '../components/Header/Header';
 // import HomePage from 'pages/HomePage/HomePage';
 // import LibraryPage from 'pages/LibraryPage/LibraryPage';
-import { Route, Routes } from 'react-router-dom';
 
 // import PublicRoute from '../Routes/PublicRoutes/PublicRoutes';
 // import PrivateRoute from '../Routes/PrivateRoutes/PrivateRoutes';
 
-const HomePage = lazy(() => import('pages/HomePage/HomePage'));
+const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const LibraryPage = lazy(() => import('../pages/LibraryPage/LibraryPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
