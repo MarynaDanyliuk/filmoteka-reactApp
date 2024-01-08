@@ -9,13 +9,11 @@ const Gallery = ({ items }) => {
   console.log(items);
   return (
     <div className={css.section}>
-      <div className={css.container}>
-        <ul className={css.gallery}>
-          {items.map(item => (
-            <MovieCard key={item.id} item={item} />
-          ))}
-        </ul>
-      </div>
+      <ul className={css.gallery}>
+        {items.map(item => (
+          <MovieCard key={item.id} item={item} />
+        ))}
+      </ul>
     </div>
   );
 };

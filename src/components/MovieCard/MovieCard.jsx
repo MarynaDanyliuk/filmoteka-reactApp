@@ -20,7 +20,7 @@ export const MovieCard = ({ item }) => {
           id={item.id}
           className={css.movie_img}
           src={url}
-          alt={item.originalTitle}
+          alt={item.original_title}
           // loading="lazy"
         />
         <p className={css.movie_title}>{original_title}</p>

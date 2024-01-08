@@ -6,8 +6,8 @@ import Header from 'components/Header/Header';
 // import LibraryPage from 'pages/LibraryPage/LibraryPage';
 import { Route, Routes } from 'react-router-dom';
 
-import PublicRoute from '../Routes/PublicRoutes/PublicRoutes';
-import PrivateRoute from '../Routes/PrivateRoutes/PrivateRoutes';
+// import PublicRoute from '../Routes/PublicRoutes/PublicRoutes';
+// import PrivateRoute from '../Routes/PrivateRoutes/PrivateRoutes';
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const LibraryPage = lazy(() => import('../pages/LibraryPage/LibraryPage'));
@@ -21,15 +21,14 @@ export const App = () => {
       <Header />
       <Suspense>
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-
-          <Route element={<PublicRoute />}>
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/login" element={<LoginPage />} />
-          </Route>
-          <Route element={<PrivateRoute />}>
-            <Route path="/library" element={<LibraryPage />}></Route>
-          </Route>
+          {/* <Route element={<PublicRoute />}> */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          {/* </Route> */}
+          {/* <Route element={<PrivateRoute />}> */}
+          <Route path="/library" element={<LibraryPage />}></Route>
+          {/* </Route> */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
