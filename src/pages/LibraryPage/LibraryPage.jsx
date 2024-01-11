@@ -1,9 +1,9 @@
 import Gallery from 'components/Gallery/Gallery';
 import LoadMoreButton from 'components/LoadMoreButton/LoadMoreButton';
 
-import css from '../NotFoundPage/NotFoundPage.module.css';
+import css from '../LibraryPage/LibraryPage.module.css';
 
-const NotFoundPage = () => {
+const LibraryPage = () => {
   return (
     <div className={css.section}>
       <div className={css.container}>
@@ -15,4 +15,4 @@ const NotFoundPage = () => {
   );
 };
 
-export default NotFoundPage;
+export default LibraryPage;

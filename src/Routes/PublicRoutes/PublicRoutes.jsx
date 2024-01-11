@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 // import { getAuth } from '../../redux/auth/auth-selectors';
 
 const PublicRoute = () => {
-  return <Navigate to="/filmoteka_reactApp" />;
+  return <Navigate to="/" />;
   //   const { isLogin, token } = useSelector(getAuth);
 
   //   if (!isLogin && token) {

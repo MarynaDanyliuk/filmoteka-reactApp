@@ -1,16 +1,10 @@
 import css from '../Header/Header.module.css';
-
 import icons from '../../images/icons.svg';
 
-import SearchForm from './SearchForm/SearchForm';
-
 import { NavLink } from 'react-router-dom';
-// import HeaderLibraryPage from './HeaderLibraryPage/HeaderLibraryPage';
 
-// const getClassName = ({ isActive }) => {
-//   const className = isActive ? `${css.link} ${css.active}` : css.link;
-//   return className;
-// };
+// import SearchForm from './SearchForm/SearchForm';
+import NavigationLibrary from './NavigationLibrary/NavigationLibrary';
 
 const Header = () => {
   return (
@@ -38,8 +32,8 @@ const Header = () => {
             </ul>
           </div>
 
-          <SearchForm />
-          {/* <HeaderLibraryPage /> */}
+          {/* <SearchForm /> */}
+          <NavigationLibrary />
         </div>
       </div>
     </div>
@@ -50,3 +44,7 @@ export default Header;
 
 // _________________________________
 // style = 'mar gin-right: 8px';
+// const getClassName = ({ isActive }) => {
+//   const className = isActive ? `${css.link} ${css.active}` : css.link;
+//   return className;
+// };
