@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useState } from 'react';
+import { useEffect, useCallback } from 'react';
 
 import css from './Modal.module.css';
 import ReactDOM from 'react-dom';
@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 const modalRoot = document.querySelector('#modal-root');
 
 const Modal = ({ close, children, approve }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  //   const [isModalOpen, setIsModalOpen] = useState(false);
   const closeModal = useCallback(
     ({ target, currentTarget, code }) => {
       if (target === currentTarget || code === 'Escape') {
@@ -31,9 +31,9 @@ const Modal = ({ close, children, approve }) => {
         <div className={css.modal_content}>
           <button
             className={css.modal_close}
-            onClick={() => {
-              setIsModalOpen(false);
-            }}
+            // onClick={() => {
+            //   setIsModalOpen(false);
+            // }}
           >
             X
           </button>
