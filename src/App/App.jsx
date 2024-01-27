@@ -1,6 +1,6 @@
 import css from '../App/App.module.css';
 
-// import { GlobalStyle } from './App.styles';
+import { GlobalStyle } from './App.styles';
 
 import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
@@ -14,8 +14,9 @@ const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 export const App = () => {
   return (
     <div className={css.container}>
+      <GlobalStyle />
       <Header />
-      <Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/library" element={<LibraryPage />} />
