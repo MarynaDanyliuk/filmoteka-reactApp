@@ -3,8 +3,8 @@ import css from './MovieCard.module.css';
 import { useState } from 'react';
 
 import Modal from '../Modal/Modal';
-// import ModalDetails from '../ModalDetails/ModalDetails';
-import ModalLogin from 'components/ModalAuth/ModalLogin/ModalLogin';
+import ModalDetails from '../ModalDetails/ModalDetails';
+// import ModalLogin from 'components/ModalAuth/ModalLogin/ModalLogin';
 
 export const MovieCard = ({ item }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,13 +42,13 @@ export const MovieCard = ({ item }) => {
         <p>{releaseYear}</p>
         <p className={css.movie_average}>{vote_average.toFixed(1)}</p>
       </div>
-      {/* {isModalOpen && (
+      {isModalOpen && (
         <Modal close={() => setIsModalOpen(false)}>
           <h1>Тут має бути Модалка</h1>
           <ModalDetails item={item} />
         </Modal>
-      )} */}
-      {isModalOpen && (
+      )}
+      {/* {isModalOpen && (
         <Modal close={() => setIsModalOpen(false)}>
           <ModalLogin
             close={() => {
@@ -56,7 +56,7 @@ export const MovieCard = ({ item }) => {
             }}
           />
         </Modal>
-      )}
+      )} */}
     </li>
   );
 };
