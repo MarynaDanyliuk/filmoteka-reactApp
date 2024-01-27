@@ -6,6 +6,7 @@ import abstractBackground_tab_2x from '../../images/abstractBackground_tab_2x.jp
 import abstractBackground_mob_1x from '../../images/abstractBackground_mob_1x.jpg';
 import abstractBackground_mob_2x from '../../images/abstractBackground_mob_2x.jpg';
 
+
 export const HeaderContainer = styled.div`
   padding: 40px 32px 0;
   background-image: url('${abstractBackground_mob_1x}');
@@ -67,15 +68,15 @@ export const HeaderListItem = styled.li`
   }
 `;
 
-export const Icon = styled.svg`
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  margin-right: 8px;
-`;
+// export const Icon = styled.svg`
+//   display: inline-block;
+//   width: 1em;
+//   height: 1em;
+//   stroke-width: 0;
+//   stroke: currentColor;
+//   fill: currentColor;
+//   margin-right: 8px;
+// `;
 
 // .icon {
 //   display: inline-block;

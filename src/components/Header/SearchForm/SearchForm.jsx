@@ -1,5 +1,6 @@
 import css from '../SearchForm/SearchForm.module.css';
 import { Button } from 'components/shared/Button/Button';
+import Icon from 'components/shared/Icon/Icon';
 
 const SearchForm = () => {
   return (
@@ -12,7 +13,18 @@ const SearchForm = () => {
         autoComplete="off"
         placeholder="Search films..."
       />
-      <Button />
+      <Button
+        // onClick={close}
+        type="submit"
+        style={{
+          maxWidth: '32px',
+          width: '100%',
+          border: 'transparent',
+          borderBottom: '1px solid white',
+        }}
+      >
+        <Icon id="icon-search" />
+      </Button>
     </form>
   );
 };

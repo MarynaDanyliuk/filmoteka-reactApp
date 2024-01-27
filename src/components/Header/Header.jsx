@@ -1,17 +1,17 @@
 import css from '../Header/Header.module.css';
 
-import icons from '../../images/icons.svg';
+// import icons from '../../images/icons.svg';
 
 import { NavLink } from 'react-router-dom';
 
 import SearchForm from './SearchForm/SearchForm';
+import Icon from '../shared/Icon/Icon';
 // import NavigationLibrary from './NavigationLibrary/NavigationLibrary';
 import {
   HeaderContainer,
   HeaderNav,
   HeaderList,
   HeaderListItem,
-  Icon,
 } from './Header.styles';
 
 const Header = () => {
@@ -19,9 +19,10 @@ const Header = () => {
     <HeaderContainer>
       <HeaderNav>
         <NavLink to="/" className={css.nav_item}>
-          <Icon width="16" height="16">
+          <Icon id="icon-film" />
+          {/* <Icon width="16" height="16">
             <use href={icons + '#icon-film'}></use>
-          </Icon>
+          </Icon> */}
           Filmoteka
         </NavLink>
         <HeaderList>
