@@ -1,30 +1,30 @@
 {
   "files": {
-    "main.css": "/filmoteka-reactApp/static/css/main.a09240f7.css",
-    "main.js": "/filmoteka-reactApp/static/js/main.99b5c4ea.js",
+    "main.css": "/filmoteka-reactApp/static/css/main.01796a70.css",
+    "main.js": "/filmoteka-reactApp/static/js/main.ed1b689c.js",
     "static/css/745.e3880f8b.chunk.css": "/filmoteka-reactApp/static/css/745.e3880f8b.chunk.css",
     "static/js/745.45bfeb87.chunk.js": "/filmoteka-reactApp/static/js/745.45bfeb87.chunk.js",
     "static/css/851.a3f0043a.chunk.css": "/filmoteka-reactApp/static/css/851.a3f0043a.chunk.css",
     "static/js/851.ba2a92ef.chunk.js": "/filmoteka-reactApp/static/js/851.ba2a92ef.chunk.js",
     "static/css/154.37492388.chunk.css": "/filmoteka-reactApp/static/css/154.37492388.chunk.css",
     "static/js/154.23f95cee.chunk.js": "/filmoteka-reactApp/static/js/154.23f95cee.chunk.js",
-    "static/js/162.51c29df3.chunk.js": "/filmoteka-reactApp/static/js/162.51c29df3.chunk.js",
+    "static/js/162.e367df66.chunk.js": "/filmoteka-reactApp/static/js/162.e367df66.chunk.js",
     "static/media/abstractBackground_2x.jpg": "/filmoteka-reactApp/static/media/abstractBackground_2x.efedd410f95f542b07d3.jpg",
     "static/media/abstractBackground_tab_2x.jpg": "/filmoteka-reactApp/static/media/abstractBackground_tab_2x.5050a1fad042ca3639c0.jpg",
     "static/media/icons.svg": "/filmoteka-reactApp/static/media/icons.04c71595bfb274435b66cdd0dedb990b.svg",
     "index.html": "/filmoteka-reactApp/index.html",
-    "main.a09240f7.css.map": "/filmoteka-reactApp/static/css/main.a09240f7.css.map",
-    "main.99b5c4ea.js.map": "/filmoteka-reactApp/static/js/main.99b5c4ea.js.map",
+    "main.01796a70.css.map": "/filmoteka-reactApp/static/css/main.01796a70.css.map",
+    "main.ed1b689c.js.map": "/filmoteka-reactApp/static/js/main.ed1b689c.js.map",
     "745.e3880f8b.chunk.css.map": "/filmoteka-reactApp/static/css/745.e3880f8b.chunk.css.map",
     "745.45bfeb87.chunk.js.map": "/filmoteka-reactApp/static/js/745.45bfeb87.chunk.js.map",
     "851.a3f0043a.chunk.css.map": "/filmoteka-reactApp/static/css/851.a3f0043a.chunk.css.map",
     "851.ba2a92ef.chunk.js.map": "/filmoteka-reactApp/static/js/851.ba2a92ef.chunk.js.map",
     "154.37492388.chunk.css.map": "/filmoteka-reactApp/static/css/154.37492388.chunk.css.map",
     "154.23f95cee.chunk.js.map": "/filmoteka-reactApp/static/js/154.23f95cee.chunk.js.map",
-    "162.51c29df3.chunk.js.map": "/filmoteka-reactApp/static/js/162.51c29df3.chunk.js.map"
+    "162.e367df66.chunk.js.map": "/filmoteka-reactApp/static/js/162.e367df66.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a09240f7.css",
-    "static/js/main.99b5c4ea.js"
+    "static/css/main.01796a70.css",
+    "static/js/main.ed1b689c.js"
   ]
 }
