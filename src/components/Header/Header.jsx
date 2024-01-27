@@ -1,7 +1,5 @@
 import css from '../Header/Header.module.css';
 
-// import icons from '../../images/icons.svg';
-
 import { NavLink } from 'react-router-dom';
 
 import SearchForm from './SearchForm/SearchForm';
@@ -20,9 +18,6 @@ const Header = () => {
       <HeaderNav>
         <NavLink to="/" className={css.nav_item}>
           <Icon id="icon-film" />
-          {/* <Icon width="16" height="16">
-            <use href={icons + '#icon-film'}></use>
-          </Icon> */}
           Filmoteka
         </NavLink>
         <HeaderList>
@@ -48,3 +43,7 @@ export default Header;
 //   const className = isActive ? `${css.link} ${css.active}` : css.link;
 //   return className;
 // };
+
+/* <Icon width="16" height="16">
+            <use href={icons + '#icon-film'}></use>
+          </Icon> */

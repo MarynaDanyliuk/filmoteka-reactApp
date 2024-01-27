@@ -1,18 +1,13 @@
-import css from '../SearchForm/SearchForm.module.css';
+// import css from '../SearchForm/SearchForm.module.css';
+import { Form } from './SearchForm.styles';
 import { Button } from 'components/shared/Button/Button';
+import Input from 'components/shared/Input/Input';
 import Icon from 'components/shared/Icon/Icon';
 
 const SearchForm = () => {
   return (
-    <form className={css.form} id="header-content">
-      <input
-        type="text"
-        id="search-input"
-        className={css.search_input}
-        name="searchQuery"
-        autoComplete="off"
-        placeholder="Search films..."
-      />
+    <Form>
+      <Input type="text" placeholder="Search films..." />
       <Button
         // onClick={close}
         type="submit"
@@ -25,7 +20,9 @@ const SearchForm = () => {
       >
         <Icon id="icon-search" />
       </Button>
-    </form>
+    </Form>
+    // <form className={css.form} id="header-content">
+    // </form>
   );
 };
 
@@ -46,3 +43,12 @@ export default SearchForm;
 //   const className = isActive ? `${css.link} ${css.active}` : css.link;
 //   return className;
 // };
+
+/* <input
+        type="text"
+        id="search-input"
+        className={css.search_input}
+        name="searchQuery"
+        autoComplete="off"
+        placeholder="Search films..."
+      /> */

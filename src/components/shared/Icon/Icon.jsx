@@ -12,12 +12,12 @@ const Icon = ({ id, ...props }) => {
 };
 
 Icon.propTypes = {
-  //   f: PropTypes.string,
   id: PropTypes.string.isRequired,
-  //   s: PropTypes.string,
 };
 
 export default Icon;
 
 // s={s} f={f}
 //  (s = 'currentColor'), (f = 'none');
+  //   s: PropTypes.string,
+    //   f: PropTypes.string,
