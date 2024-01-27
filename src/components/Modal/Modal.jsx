@@ -1,12 +1,10 @@
-import { useEffect, useCallback } from 'react';
-
 import css from './Modal.module.css';
-import ReactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
+import { useEffect, useCallback } from 'react';
 
 const modalRoot = document.querySelector('#modal-root');
 
 const Modal = ({ close, children, approve }) => {
-  //   const [isModalOpen, setIsModalOpen] = useState(false);
   const closeModal = useCallback(
     ({ target, currentTarget, code }) => {
       if (target === currentTarget || code === 'Escape') {
@@ -15,6 +13,7 @@ const Modal = ({ close, children, approve }) => {
     },
     [close]
   );
+
   useEffect(() => {
     document.addEventListener('keydown', closeModal);
     document.body.style.overflow = 'hidden';
@@ -24,17 +23,12 @@ const Modal = ({ close, children, approve }) => {
     };
   }, [closeModal]);
 
-  return ReactDOM.createPortal(
-    // <div className={css.modal}></div>
+  // console.log('Close function:', close);
+  return createPortal(
     <div id="movie" className={css.modal} onClick={closeModal}>
       <div className={css.modal_body}>
         <div className={css.modal_content}>
-          <button
-            className={css.modal_close}
-            // onClick={() => {
-            //   setIsModalOpen(false);
-            // }}
-          >
+          <button className={css.modal_close} onClick={close}>
             X
           </button>
           {children}

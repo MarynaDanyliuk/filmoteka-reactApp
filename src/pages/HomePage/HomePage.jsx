@@ -22,7 +22,7 @@ const HomePage = () => {
           error: null,
         }));
         const result = await fetchMovies();
-        console.log(result);
+        // console.log(result);
         setState(prevState => {
           return {
             ...prevState,
@@ -46,7 +46,7 @@ const HomePage = () => {
 
     fetchMoviesList();
 
-    console.log('запускаємо useEffect');
+    // console.log('запускаємо useEffect');
   }, [setState]);
 
   const { items, loading, error } = state;
@@ -54,7 +54,6 @@ const HomePage = () => {
   return (
     <div className={css.section}>
       <div className={css.container}>
-        <h1 className={css.title}>Home page</h1>
         {items.length > 0 && <Gallery items={items} />}
         {loading && <p>...loading</p>}
         {error && <p>...load failed</p>}

@@ -1,4 +1,4 @@
-.section {
+/* .section {
   margin-bottom: 60px;
 }
 
@@ -8,17 +8,17 @@
 }
 
 .header {
-  background-image: url(../../images/abstract-background-with-red-lines_1x.jpg);
+  background-image: url(../../images/abstractBackground_1x.jpg);
   background-position: center;
   background-size: cover;
-  /* background-size: auto auto; */
-}
+
+} */
 
 .header_nav {
   display: flex;
   align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  /* padding-top: 40px;
+  padding-bottom: 40px; */
 }
 
 /* .logo {

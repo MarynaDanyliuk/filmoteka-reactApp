@@ -1,5 +1,5 @@
 import css from '../SearchForm/SearchForm.module.css';
-import { Button } from 'components/Button/Button';
+import { Button } from 'components/shared/Button/Button';
 
 const SearchForm = () => {
   return (

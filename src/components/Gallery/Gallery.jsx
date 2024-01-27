@@ -6,7 +6,7 @@ import { MovieCard } from '../MovieCard/MovieCard';
 // useLocation;
 
 const Gallery = ({ items }) => {
-  console.log(items);
+  // console.log(items);
   return (
     <div className={css.section}>
       <ul className={css.gallery}>

@@ -1,42 +1,41 @@
 import css from '../Header/Header.module.css';
+
 import icons from '../../images/icons.svg';
 
 import { NavLink } from 'react-router-dom';
 
-// import SearchForm from './SearchForm/SearchForm';
-import NavigationLibrary from './NavigationLibrary/NavigationLibrary';
+import SearchForm from './SearchForm/SearchForm';
+// import NavigationLibrary from './NavigationLibrary/NavigationLibrary';
+import {
+  HeaderContainer,
+  HeaderNav,
+  HeaderList,
+  HeaderListItem,
+  Icon,
+} from './Header.styles';
 
 const Header = () => {
   return (
-    <div className={css.section}>
-      <div className={css.header}>
-        <div className={css.container}>
-          <div className={css.header_nav}>
-            <NavLink to="/" className={css.nav_item}>
-              <svg className={css.icon} width="16" height="16">
-                <use href={icons + '#icon-film'}></use>
-              </svg>
-              Filmoteka
-            </NavLink>
-            <ul className={css.nav_list}>
-              <li>
-                <NavLink className={css.nav_item} to="/">
-                  Home
-                </NavLink>
-              </li>
-              <li>
-                <NavLink className={css.nav_item} to="/library">
-                  My Library
-                </NavLink>
-              </li>
-            </ul>
-          </div>
-
-          {/* <SearchForm /> */}
-          <NavigationLibrary />
-        </div>
-      </div>
-    </div>
+    <HeaderContainer>
+      <HeaderNav>
+        <NavLink to="/" className={css.nav_item}>
+          <Icon width="16" height="16">
+            <use href={icons + '#icon-film'}></use>
+          </Icon>
+          Filmoteka
+        </NavLink>
+        <HeaderList>
+          <HeaderListItem>
+            <NavLink to="/">Home</NavLink>
+          </HeaderListItem>
+          <HeaderListItem>
+            <NavLink to="/library">My Library</NavLink>
+          </HeaderListItem>
+        </HeaderList>
+      </HeaderNav>
+      <SearchForm />
+      {/* <NavigationLibrary /> */}
+    </HeaderContainer>
   );
 };
 
