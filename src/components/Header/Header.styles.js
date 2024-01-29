@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import abstractBackground_1x from '../../images/abstractBackground_1x.jpg';
 import abstractBackground_2x from '../../images/abstractBackground_2x.jpg';
 import abstractBackground_tab_1x from '../../images/abstractBackground_tab_1x.jpg';
@@ -6,36 +7,29 @@ import abstractBackground_tab_2x from '../../images/abstractBackground_tab_2x.jp
 import abstractBackground_mob_1x from '../../images/abstractBackground_mob_1x.jpg';
 import abstractBackground_mob_2x from '../../images/abstractBackground_mob_2x.jpg';
 
-
 export const HeaderContainer = styled.div`
   padding: 40px 32px 0;
   background-image: url('${abstractBackground_mob_1x}');
   background-position: center;
   background-size: cover;
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
+  @media ${props => props.theme.mediaRetina.retinaSize} {
     background-image: url('${abstractBackground_mob_2x}');
   }
 
   margin-bottom: 60px;
 
-  @media screen and (min-width: 768px) {
+  @media ${props => props.theme.media.tab} {
     background-image: url('${abstractBackground_tab_1x}');
 
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
+    @media ${props => props.theme.mediaRetina.retinaSize} {
       background-image: url('${abstractBackground_tab_2x}');
     }
   }
 
-  @media screen and (min-width: 1280px) {
+  @media ${props => props.theme.media.desk} {
     background-image: url('${abstractBackground_1x}');
 
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
+    @media ${props => props.theme.mediaRetina.retinaSize} {
       background-image: url('${abstractBackground_2x}');
     }
   }
@@ -45,28 +39,31 @@ export const HeaderNav = styled.div`
   display: flex;
 `;
 
+export const StyledNavLink = styled(NavLink)`
+  color: ${props => props.theme.colors.primaryColor};
+  font-weight: ${props => props.theme.fontWeiths.semiBold};
+  font-size: ${props => props.theme.fontSizes.m};
+  text-transform: uppercase;
+`;
+
 export const HeaderList = styled.ul`
   display: flex;
   justify-content: end;
   gap: 30px;
   margin-left: auto;
-  @media (max-width: 768px) {
+  @media ${props => props.theme.mediaMax.tab} {
     gap: 20px;
     margin-bottom: 20px;
-  }
-`;
-
-export const HeaderListItem = styled.li`
-  color: white;
-  font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-
-  @media (max-width: 768px) {
     display: none;
   }
 `;
+
+// export const HeaderListItem = styled.li`
+//   color: ${props => props.theme.colors.primaryColor};
+//   font-weight: ${props => props.theme.fontWeiths.semiBold};
+//   font-size: ${props => props.theme.fontSizes.m};
+//   text-transform: uppercase;
+// `;
 
 // export const Icon = styled.svg`
 //   display: inline-block;

@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
-export const InputSearch = styled.input`
+export const StyledInput = styled.input`
   height: 30px;
   width: 394px;
-  background-color: transparent;
-  border: transparent;
-  border-bottom: solid 1px white;
-  color: white;
-  font-size: 18px;
+  background-color: ${props => props.theme.colors.backgroundModal};
+  border: ${props => props.theme.colors.inputOutline};
+  border-bottom: ${props => props.theme.colors.inputBorder};
+  color: ${props => props.theme.colors.primaryColor};
+  font-size: ${props => props.theme.fontSizes.s};
 
   &:focus {
-    background-color: transparent;
+    background-color: ${props => props.theme.colors.backgroundModal};
     outline: 0;
-    color: white;
+    color: ${props => props.theme.colors.primaryColor};
   }
 
   &::placeholder {

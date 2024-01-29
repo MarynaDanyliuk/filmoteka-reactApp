@@ -1,32 +1,30 @@
-// import css from '../SearchForm/SearchForm.module.css';
 import { Form } from './SearchForm.styles';
 import { Button } from 'components/shared/Button/Button';
 import Input from 'components/shared/Input/Input';
 import Icon from 'components/shared/Icon/Icon';
 
-const SearchForm = () => {
+const SearchForm = ({ search }) => {
   return (
-    <Form>
+    <Form $w="100%">
       <Input type="text" placeholder="Search films..." />
       <Button
-        // onClick={close}
         type="submit"
+        onClick={search}
+        $w="100%"
         style={{
           maxWidth: '32px',
-          width: '100%',
-          border: 'transparent',
           borderBottom: '1px solid white',
         }}
       >
         <Icon id="icon-search" />
       </Button>
     </Form>
-    // <form className={css.form} id="header-content">
-    // </form>
   );
 };
 
 export default SearchForm;
+
+// import css from '../SearchForm/SearchForm.module.css';
 
 // _______________
 //  className = { getClassName };

@@ -3,7 +3,7 @@ import css from './MovieCard.module.css';
 import { useState } from 'react';
 
 import Modal from '../Modal/Modal';
-import ModalDetails from '../ModalDetails/ModalDetails';
+import ModalDetails from '../Modal/ModalDetails/ModalDetails';
 // import ModalLogin from 'components/ModalAuth/ModalLogin/ModalLogin';
 
 export const MovieCard = ({ item }) => {

@@ -1,5 +1,3 @@
-// import css from '../App/App.module.css';
-
 import React, { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Theme } from '../utils/theme';
@@ -8,6 +6,10 @@ import Header from '../components/Header/Header';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const LibraryPage = lazy(() => import('../pages/LibraryPage/LibraryPage'));
+const LibraryWatched = lazy(() =>
+  import('../pages/LibraryWatched/LibraryWatched')
+);
+const LibraryQueue = lazy(() => import('../pages/LibraryQueue/LibraryQueue'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
 export const App = () => {
@@ -17,7 +19,11 @@ export const App = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/library" element={<LibraryPage />} />
+          <Route path="/library" element={<LibraryPage />}>
+            <Route path="watched" element={<LibraryWatched />} />
+            <Route path="queue" element={<LibraryQueue />} />
+          </Route>
+          {/* <Route path="/library" element={<LibraryPage />} /> */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

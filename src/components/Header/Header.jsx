@@ -1,36 +1,28 @@
-import css from '../Header/Header.module.css';
-
-import { NavLink } from 'react-router-dom';
-
 import SearchForm from './SearchForm/SearchForm';
 import Icon from '../shared/Icon/Icon';
-// import NavigationLibrary from './NavigationLibrary/NavigationLibrary';
+import NavigationLibrary from './NavigationLibrary/NavigationLibrary';
 import {
   HeaderContainer,
   HeaderNav,
   HeaderList,
-  HeaderListItem,
+  StyledNavLink,
 } from './Header.styles';
 
 const Header = () => {
   return (
     <HeaderContainer>
       <HeaderNav>
-        <NavLink to="/" className={css.nav_item}>
+        <StyledNavLink to="/">
           <Icon id="icon-film" />
           Filmoteka
-        </NavLink>
+        </StyledNavLink>
         <HeaderList>
-          <HeaderListItem>
-            <NavLink to="/">Home</NavLink>
-          </HeaderListItem>
-          <HeaderListItem>
-            <NavLink to="/library">My Library</NavLink>
-          </HeaderListItem>
+          <StyledNavLink to="/">Home</StyledNavLink>
+          <StyledNavLink to="/library">My Library</StyledNavLink>
         </HeaderList>
       </HeaderNav>
       <SearchForm />
-      {/* <NavigationLibrary /> */}
+      <NavigationLibrary />
     </HeaderContainer>
   );
 };
@@ -47,3 +39,4 @@ export default Header;
 /* <Icon width="16" height="16">
             <use href={icons + '#icon-film'}></use>
           </Icon> */
+// className={css.nav_item}

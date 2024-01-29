@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import css from '../HomePage/HomePage.module.css';
 
+import Container from 'components/shared/Container/Container';
 import Gallery from 'components/Gallery/Gallery';
 import LoadMoreButton from 'components/LoadMoreButton/LoadMoreButton';
 
@@ -52,14 +52,13 @@ const HomePage = () => {
   const { items, loading, error } = state;
 
   return (
-    <div className={css.section}>
-      <div className={css.container}>
-        {items.length > 0 && <Gallery items={items} />}
-        {loading && <p>...loading</p>}
-        {error && <p>...load failed</p>}
-        <LoadMoreButton />
-      </div>
-    </div>
+    <Container>
+      <h1>Home page</h1>
+      {items.length > 0 && <Gallery items={items} />}
+      {loading && <p>...loading</p>}
+      {error && <p>...load failed</p>}
+      <LoadMoreButton />
+    </Container>
   );
 };
 

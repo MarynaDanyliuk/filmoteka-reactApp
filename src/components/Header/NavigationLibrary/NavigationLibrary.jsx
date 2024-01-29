@@ -1,6 +1,4 @@
-import css from '../NavigationLibrary/NavigationLibrary.module.css';
-
-// import { NavLink } from 'react-router-dom';
+import { NavLibrary, NavLinkBtn } from './NavigationLibrary.styles';
 
 // const getClassName = ({ isActive }) => {
 //   const className = isActive ? `${css.link} ${css.active}` : css.link;
@@ -9,24 +7,15 @@ import css from '../NavigationLibrary/NavigationLibrary.module.css';
 
 const NavigationLibrary = () => {
   return (
-    <div>
-      <ul className={css.nav_list_button}>
-        <li>
-          <button id="watched" type="submit" className={css.btn_header}>
-            Watched
-          </button>
-        </li>
-        <li>
-          <button id="queue" type="submit" className={css.btn_header}>
-            QUEUE
-          </button>
-        </li>
-      </ul>
-    </div>
+    <NavLibrary>
+      <NavLinkBtn id="watched" to="/library/watched" w="148">
+        Watched
+      </NavLinkBtn>
+      <NavLinkBtn id="queue" to="/library/queue" w="148">
+        Queue
+      </NavLinkBtn>
+    </NavLibrary>
   );
 };
 
 export default NavigationLibrary;
-
-// className={css.nav_button}
-// className={css.nav_button}

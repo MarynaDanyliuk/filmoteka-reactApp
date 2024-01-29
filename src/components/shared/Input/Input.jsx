@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 
-import { InputSearch } from '../Input/Input.styles';
+import { StyledInput } from '../Input/Input.styles';
 
 const Input = ({ type, autoComplete = 'on', placeholder, ...props }) => {
-  return <InputSearch type={type} {...props} placeholder={placeholder} />;
+  return <StyledInput type={type} {...props} placeholder={placeholder} />;
 };
 
 Input.propTypes = {
