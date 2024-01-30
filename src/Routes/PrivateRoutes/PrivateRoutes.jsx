@@ -5,17 +5,17 @@ import { Navigate } from 'react-router-dom';
 
 const PrivateRoute = () => {
   return <Navigate to="/library" />;
-  //   const { isLogin, token } = useSelector(getAuth);
+  // const { isLogin, token } = useSelector(getAuth);
 
-  //   if (!isLogin && token) {
-  //     return <p>...Loading</p>;
-  //   }
+  // if (!isLogin && token) {
+  //   return <p>...Loading</p>;
+  // }
 
-  //   if (!isLogin && !token) {
-  //     return <Navigate to="/login" />;
-  //   }
+  // if (!isLogin && !token) {
+  //   return <Navigate to="/login" />;
+  // }
 
-  //   return <Outlet />;
+  // return <Outlet />;
 };
 
 export default PrivateRoute;

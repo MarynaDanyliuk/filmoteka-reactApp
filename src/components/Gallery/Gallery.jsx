@@ -1,20 +1,17 @@
-import css from './Gallery.module.css';
 import { MovieCard } from '../MovieCard/MovieCard';
+import { StyledGallery } from '../Gallery/Gallery.styles';
 
 // import { Link } from 'react-router-dom';
 
 // useLocation;
 
 const Gallery = ({ items }) => {
-  // console.log(items);
   return (
-    <div className={css.section}>
-      <ul className={css.gallery}>
-        {items.map(item => (
-          <MovieCard key={item.id} item={item} />
-        ))}
-      </ul>
-    </div>
+    <StyledGallery>
+      {items.map(item => (
+        <MovieCard key={item.id} item={item} />
+      ))}
+    </StyledGallery>
   );
 };
 export default Gallery;
@@ -22,6 +19,13 @@ export default Gallery;
 Gallery.defaultProps = {
   items: [],
 };
+
+
+
+
+// import css from './Gallery.module.css';
+
+// className={css.gallery}
 
 // const GalleryList = items.map(({ id, data }) => (
 //   <MovieCard key={id} data={data} />

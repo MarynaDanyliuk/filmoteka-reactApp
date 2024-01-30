@@ -1,4 +1,4 @@
-.gallery_card {
+/* .gallery_card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6,7 +6,7 @@
 }
 .gallery_card:hover {
   transform: scale(1.03);
-}
+} */
 
 .movie_img {
   object-fit: cover;
@@ -17,13 +17,13 @@
   border-radius: 10px;
 }
 
-.movie_describtion {
+/* .movie_describtion {
   display: flex;
   font-size: 20px;
   line-height: 24px;
   color: #ff6b08;
   align-items: baseline;
-}
+} */
 
 .movie_genresList {
   position: relative;

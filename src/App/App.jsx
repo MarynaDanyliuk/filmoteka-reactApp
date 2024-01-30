@@ -4,6 +4,9 @@ import { Theme } from '../utils/theme';
 
 import Header from '../components/Header/Header';
 
+import PublicRoute from '../Routes/PublicRoutes/PublicRoutes';
+import PrivateRoute from '../Routes/PrivateRoutes/PrivateRoutes';
+
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const LibraryPage = lazy(() => import('../pages/LibraryPage/LibraryPage'));
 const LibraryWatched = lazy(() =>
@@ -18,18 +21,21 @@ export const App = () => {
       <Header />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/library" element={<LibraryPage />}>
+          <Route path="/" element={<PublicRoute />} />
+          <Route index element={<HomePage />} />
+          <Route path="/library" element={<PrivateRoute />}>
+            <Route index element={<LibraryPage />} />
             <Route path="watched" element={<LibraryWatched />} />
             <Route path="queue" element={<LibraryQueue />} />
           </Route>
-          {/* <Route path="/library" element={<LibraryPage />} /> */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </Theme>
   );
 };
+
+/* <Route path="/library" element={<LibraryPage />} /> */
 
 // import HomePage from 'pages/HomePage/HomePage';
 // import LibraryPage from 'pages/LibraryPage/LibraryPage';
