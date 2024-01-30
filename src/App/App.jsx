@@ -23,11 +23,11 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<PublicRoute />} />
           <Route index element={<HomePage />} />
-          <Route path="/library" element={<PrivateRoute />}>
-            <Route index element={<LibraryPage />} />
-            <Route path="watched" element={<LibraryWatched />} />
-            <Route path="queue" element={<LibraryQueue />} />
-          </Route>
+          {/* <Route path="/library" element={<PrivateRoute />}> */}
+          <Route path="/library" element={<LibraryPage />} />
+          <Route path="watched" element={<LibraryWatched />} />
+          <Route path="queue" element={<LibraryQueue />} />
+          {/* </Route> */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>

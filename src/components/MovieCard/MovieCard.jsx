@@ -4,12 +4,7 @@ import { useState } from 'react';
 
 import Modal from '../Modal/Modal';
 import ModalDetails from '../Modal/ModalDetails/ModalDetails';
-import {
-  StyledMovieCard,
-  MovieImg,
-  Description,
-  CardLink,
-} from './MovieCard.styles';
+import { StyledMovieCard, MovieImg, Description } from './MovieCard.styles';
 
 export const MovieCard = ({ item }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,7 +23,7 @@ export const MovieCard = ({ item }) => {
   const url = `https://image.tmdb.org/t/p/w500${poster_path}`;
   return (
     <StyledMovieCard key={id} onClick={() => setIsModalOpen(true)}>
-      <CardLink>
+      <div>
         <MovieImg
           id={item.id}
           // className={css.movie_img}
@@ -45,8 +40,12 @@ export const MovieCard = ({ item }) => {
           <p className={css.movie_average}>{vote_average.toFixed(1)}</p>
         </Description>
         {isModalOpen && (
-          <Modal close={() => setIsModalOpen(false)}>
-            <h1>Тут має бути Модалка</h1>
+          <Modal
+            close={() => setIsModalOpen(false)}
+            approve={() => {
+              console.log('rere');
+            }}
+          >
             <ModalDetails item={item} />
           </Modal>
         )}
@@ -59,7 +58,7 @@ export const MovieCard = ({ item }) => {
           />
         </Modal>
       )} */}
-      </CardLink>
+      </div>
     </StyledMovieCard>
   );
 };

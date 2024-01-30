@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 
-export const StyledMovieCard = styled.div`
+export const StyledMovieCard = styled.li`
   display: flex;
   justify-content: center;
-`;
 
-export const CardLink = styled.a`
   transition: transform 400ms easy-out;
   &:hover {
-    transform: scale(1.03);
-  }
-
-  /* max-width: 280px; */
-
-  @media screen and (min-width: $widthTablet) {
-    /* max-width: 335px; */
-  }
-  @media screen and (min-width: ($widthDesktop)) {
-    /* max-width: 394px; */
+    transform: scale(1.07);
   }
 `;
+
+// export const CardLink = styled.a`
+//   /* max-width: 280px; */
+
+//   @media screen and (min-width: $widthTablet) {
+//     /* max-width: 335px; */
+//   }
+//   @media screen and (min-width: ($widthDesktop)) {
+//     /* max-width: 394px; */
+//   }
+// `;
 
 export const MovieImg = styled.img`
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
@@ -27,14 +27,8 @@ export const MovieImg = styled.img`
   border-radius: 10px;
   border-radius: 10px;
   width: 280px;
-  /* max-width: 280px; */
   height: 402px;
   object-fit: cover;
-  /* 
-  transition: transform 400ms easy-out;
-  &:hover {
-    transform: scale(1.03);
-  } */
 
   @media ${props => props.theme.media.tab} {
     width: 336px;
@@ -55,8 +49,3 @@ export const Description = styled.div`
   color: #ff6b08;
   align-items: baseline;
 `;
-//   @media ${props => props.theme.media.tab} {
-//     margin-bottom: 60px;
-//     padding: 0 32px;
-//     /* max-width: 100%; */
-//   }

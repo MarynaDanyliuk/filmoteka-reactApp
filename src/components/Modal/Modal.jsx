@@ -1,6 +1,6 @@
 import css from './Modal.module.css';
 import { createPortal } from 'react-dom';
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -23,12 +23,15 @@ const Modal = ({ close, children, approve }) => {
     };
   }, [closeModal]);
 
-  // console.log('Close function:', close);
+  console.log('Close function:', close);
   return createPortal(
     <div id="movie" className={css.modal} onClick={closeModal}>
       <div className={css.modal_body}>
         <div className={css.modal_content}>
           <button className={css.modal_close} onClick={close}>
+            X
+          </button>
+          <button className={css.modal_close} onClick={approve}>
             X
           </button>
           {children}
