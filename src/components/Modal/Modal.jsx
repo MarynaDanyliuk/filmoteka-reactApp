@@ -1,6 +1,12 @@
-import css from './Modal.module.css';
+// import css from './Modal.module.css';
 import { createPortal } from 'react-dom';
-import { useEffect, useCallback, useState } from 'react';
+import { useEffect, useCallback } from 'react';
+import {
+  ModalBody,
+  ModalClose,
+  ModalContent,
+  StyledModal,
+} from './Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -25,21 +31,21 @@ const Modal = ({ close, children, approve }) => {
 
   console.log('Close function:', close);
   return createPortal(
-    <div id="movie" className={css.modal} onClick={closeModal}>
-      <div className={css.modal_body}>
-        <div className={css.modal_content}>
-          <button className={css.modal_close} onClick={close}>
+    <StyledModal id="movie" onClick={closeModal}>
+      <ModalBody>
+        <ModalContent>
+          <ModalClose onClick={close} type="button">
             X
-          </button>
-          <button className={css.modal_close} onClick={approve}>
-            X
-          </button>
+          </ModalClose>
+
           {children}
-        </div>
-      </div>
-    </div>,
+        </ModalContent>
+      </ModalBody>
+    </StyledModal>,
     modalRoot
   );
 };
 
 export default Modal;
+
+// className={css.modal_close}
