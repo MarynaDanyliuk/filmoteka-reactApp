@@ -5,7 +5,7 @@ import { Theme } from '../utils/theme';
 import Header from '../components/Header/Header';
 
 import PublicRoute from '../Routes/PublicRoutes/PublicRoutes';
-import PrivateRoute from '../Routes/PrivateRoutes/PrivateRoutes';
+// import PrivateRoute from '../Routes/PrivateRoutes/PrivateRoutes';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const LibraryPage = lazy(() => import('../pages/LibraryPage/LibraryPage'));
