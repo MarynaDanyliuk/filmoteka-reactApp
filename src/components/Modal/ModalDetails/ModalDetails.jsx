@@ -1,5 +1,7 @@
 import css from './ModalDetails.module.css';
 
+import { StyledModalDetails } from './ModalDetails.styles';
+
 const ModalDetails = ({ item }) => {
   const {
     poster_path,
@@ -17,7 +19,7 @@ const ModalDetails = ({ item }) => {
   //     })
   //     .join(', ');
   return (
-    <div className={css.movie_card}>
+    <StyledModalDetails>
       <img
         src={url}
         alt={original_title}
@@ -52,7 +54,7 @@ const ModalDetails = ({ item }) => {
         <p>About</p>
         <p className={css.movie_about}>${overview}</p>
       </div>
-    </div>
+    </StyledModalDetails>
   );
 };
 export default ModalDetails;

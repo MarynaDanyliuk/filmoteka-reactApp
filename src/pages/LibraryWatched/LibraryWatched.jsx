@@ -3,7 +3,7 @@ const LibraryWatched = props => {
   return (
     <div>
       <div>
-        <hi>Library watched Page</hi>
+        <hi>Library WATCHED Page</hi>
       </div>
     </div>
   );

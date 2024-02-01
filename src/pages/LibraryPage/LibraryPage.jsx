@@ -5,6 +5,7 @@ import Gallery from 'components/Gallery/Gallery';
 import LoadMoreButton from 'components/LoadMoreButton/LoadMoreButton';
 
 import { fetchMovies } from '../../services/apiService';
+import { Outlet } from 'react-router-dom';
 
 // import css from '../LibraryPage/LibraryPage.module.css';
 
@@ -55,6 +56,7 @@ const LibraryPage = () => {
   return (
     <Container>
       <h1>Library page</h1>
+      <Outlet />
       {items.length > 0 && <Gallery items={items} />}
       {loading && <p>...loading</p>}
       {error && <p>...load failed</p>}

@@ -10,17 +10,6 @@ export const StyledMovieCard = styled.li`
   }
 `;
 
-// export const CardLink = styled.a`
-//   /* max-width: 280px; */
-
-//   @media screen and (min-width: $widthTablet) {
-//     /* max-width: 335px; */
-//   }
-//   @media screen and (min-width: ($widthDesktop)) {
-//     /* max-width: 394px; */
-//   }
-// `;
-
 export const MovieImg = styled.img`
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
@@ -49,3 +38,15 @@ export const Description = styled.div`
   color: #ff6b08;
   align-items: baseline;
 `;
+
+
+// export const CardLink = styled.a`
+//   /* max-width: 280px; */
+
+//   @media screen and (min-width: $widthTablet) {
+//     /* max-width: 335px; */
+//   }
+//   @media screen and (min-width: ($widthDesktop)) {
+//     /* max-width: 394px; */
+//   }
+// `;

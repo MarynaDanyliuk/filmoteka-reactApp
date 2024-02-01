@@ -20,9 +20,6 @@ Gallery.defaultProps = {
   items: [],
 };
 
-
-
-
 // import css from './Gallery.module.css';
 
 // className={css.gallery}

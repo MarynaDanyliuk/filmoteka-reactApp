@@ -9,29 +9,54 @@ export const StyledModal = styled.div`
   height: 100vh;
   background-color: transparent;
 
-  overflow-y: auto;
-  overflow-x: hidden;
+  /* overflow-y: auto;
+  overflow-x: hidden; */
+
   transition: all cubic-bezier(0.86, 0, 0.07, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 `;
 
 export const ModalBody = styled.div`
-  min-height: 100%;
+  position: relative;
+  border-radius: 8px;
+  /* padding: 24px 16px; */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 30px 10px;
+  /* width: calc(100% - 40px); */
+  /* max-width: 280px; */
+  background-color: #fff;
+  /* @media (min-width: 768px) {
+    max-width: 704px;
+  }
+
+  @media (min-width: 1280px) {
+    max-width: 806px;
+  } */
 `;
 
 export const ModalContent = styled.div`
-  position: relative;
-  border-radius: 8px;
-  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* max-width: 280px; */
+  /* width: 100%; */
+  /* height: fit-content; */
+  @media ${props => props.theme.media.tab} {
+    /* height: fit-content; */
+  }
+  /* position: relative;
+  border-radius: 8px; */
+  /* padding: 40px 20px; */
 
-  background-color: #fff;
-  width: 100%;
-  max-width: 280px;
+  /* background-color: #fff; */
+  /* width: 100%; */
+  /* max-width: 280px; */
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
     width: fit-content;
@@ -40,7 +65,7 @@ export const ModalContent = styled.div`
 
   @media (min-width: 1280px) {
     max-width: 806px;
-  }
+  } */
 `;
 
 export const ModalClose = styled.button`

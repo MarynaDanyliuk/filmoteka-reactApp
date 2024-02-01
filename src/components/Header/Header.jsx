@@ -18,7 +18,7 @@ const Header = () => {
         </StyledNavLink>
         <HeaderList>
           <StyledNavLink to="/">Home</StyledNavLink>
-          <StyledNavLink to="/library">My Library</StyledNavLink>
+          <StyledNavLink to="/library/watched">My Library</StyledNavLink>
         </HeaderList>
       </HeaderNav>
       <SearchForm />

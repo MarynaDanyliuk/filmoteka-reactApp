@@ -37,7 +37,6 @@ const Modal = ({ close, children, approve }) => {
           <ModalClose onClick={close} type="button">
             X
           </ModalClose>
-
           {children}
         </ModalContent>
       </ModalBody>

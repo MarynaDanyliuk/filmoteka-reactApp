@@ -24,9 +24,10 @@ export const App = () => {
           <Route path="/" element={<PublicRoute />} />
           <Route index element={<HomePage />} />
           {/* <Route path="/library" element={<PrivateRoute />}> */}
-          <Route path="/library" element={<LibraryPage />} />
-          <Route path="watched" element={<LibraryWatched />} />
-          <Route path="queue" element={<LibraryQueue />} />
+          <Route path="/library" element={<LibraryPage />}></Route>
+          <Route path="/library/watched" element={<LibraryWatched />} />
+          <Route path="/library/queue" element={<LibraryQueue />} />
+
           {/* </Route> */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
