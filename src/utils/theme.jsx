@@ -71,9 +71,9 @@ const theme = {
     s: '16px',
     m: '20px',
     l: '24px',
-    xl: '28px',
-    title: '48px',
-    heroTitle: '68px',
+    // xl: '28px',
+    // title: '48px',
+    // heroTitle: '68px',
   },
   fontWeiths: {
     normal: '400',

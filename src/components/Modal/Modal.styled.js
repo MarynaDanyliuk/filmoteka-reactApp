@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-// import { Btn } from 'components/shared/Button/Button.styles';
 
 export const StyledModal = styled.div`
   position: fixed;
@@ -50,21 +49,3 @@ export const ModalClose = styled.button`
   border: none;
   background-color: transparent;
 `;
-
-// export const ModalCloseBtn = styled(Btn)`
-//   position: absolute;
-//   padding: 18px;
-//   right: 0;
-//   top: 0;
-//   cursor: pointer;
-//   border: none;
-//   background-color: transparent;
-// `;
-
-// @media ${props => props.theme.media.tab} {
-//   max-width: 704px;
-// }
-
-// @media ${props => props.theme.media.desk} {
-//   max-width: 806px;
-// }

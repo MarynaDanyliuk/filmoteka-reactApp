@@ -3,10 +3,11 @@ import css from './ModalDetails.module.css';
 import {
   StyledModalDetails,
   MovieImg,
-  // MovieTitle,
   MovieInfoTable,
   TableCategory,
   TableData,
+  MovieOvervie,
+  MovieDescr,
 } from './ModalDetails.styles';
 
 import { Title } from 'components/shared/Title/Title';
@@ -30,8 +31,14 @@ const ModalDetails = ({ item }) => {
   return (
     <StyledModalDetails>
       <MovieImg src={url} alt={original_title} loading="lazy" />
-      <div>
-        <Title as="h3" align="start">
+      <MovieDescr>
+        <Title
+          as="h1"
+          align="start"
+          style={{
+            marginBottom: '20px',
+          }}
+        >
           {original_title}
         </Title>
         <MovieInfoTable>
@@ -49,7 +56,17 @@ const ModalDetails = ({ item }) => {
             </tr>
             <tr>
               <TableCategory>Original Title</TableCategory>
-              <TableData>{original_title}</TableData>
+              <TableData>
+                <Title
+                  as="p"
+                  align="start"
+                  style={{
+                    fontSize: '12px',
+                  }}
+                >
+                  {original_title}
+                </Title>
+              </TableData>
             </tr>
             <tr>
               <TableCategory>Genre</TableCategory>
@@ -57,9 +74,18 @@ const ModalDetails = ({ item }) => {
             </tr>
           </tbody>
         </MovieInfoTable>
-        <Title>About</Title>
-        <p>{overview}</p>
-      </div>
+        <Title
+          as="p"
+          align="start"
+          style={{
+            marginBottom: '8px',
+            fontSize: '12px',
+          }}
+        >
+          About
+        </Title>
+        <MovieOvervie>{overview}</MovieOvervie>
+      </MovieDescr>
     </StyledModalDetails>
   );
 };

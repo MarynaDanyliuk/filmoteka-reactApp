@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { StyledTitle } from './Title.styles';
 
@@ -10,7 +10,6 @@ Title.defaultProps = {
   children: null,
 };
 
-// Title.propTypes = {
-//   children: PropTypes.node,
-//   align: PropTypes.string,
-// };
+Title.propTypes = {
+  children: PropTypes.node,
+};

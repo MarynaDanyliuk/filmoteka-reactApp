@@ -1,9 +1,8 @@
-// import { StyledTitle } from 'components/shared/Title/Title.styles';
 import styled from 'styled-components';
 
 export const StyledModalDetails = styled.div`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
@@ -41,11 +40,12 @@ export const MovieImg = styled.img`
   }
 `;
 
-export const MovieDescr = styled.div``;
+export const MovieDescr = styled.div`
+  display: flex;
+  flex-direction: column;
 
-// export const MovieTitle = styled(StyledTitle)`
-//   /* margin-bottom: 20px; */
-// `;
+  /* align-content: stretch; */
+`;
 
 export const MovieInfoTable = styled.table`
   margin-bottom: 20px;
@@ -56,13 +56,23 @@ export const MovieInfoTable = styled.table`
 
 export const TableCategory = styled.td`
   color: #8c8c8c;
-  /* width: 35%; */
+  font-size: ${props => props.theme.fontSizes.xs};
+  font-weight: ${props => props.theme.fontWeiths.semi};
+  line-height: 1.67;
+  margin-bottom: 8px;
 `;
 
 export const TableData = styled.td`
   vertical-align: middle;
+  font-size: ${props => props.theme.fontSizes.xs};
+  font-weight: ${props => props.theme.fontWeiths.semi};
+  line-height: 1.67;
+  margin-bottom: 8px;
 `;
 
-// export const MovieAbout = styled.p`
-//   /* margin-bottom: 20px; */
-// `;
+export const MovieOvervie = styled.p`
+  font-size: ${props => props.theme.fontSizes.xs};
+  font-weight: ${props => props.theme.fontWeiths.semi};
+  line-height: 1.67;
+  margin-bottom: 8px;
+`;
