@@ -75,6 +75,9 @@ const theme = {
     // title: '48px',
     // heroTitle: '68px',
   },
+  lineHeights: {
+    main: 1.67,
+  },
   fontWeiths: {
     normal: '400',
     semi: '500',
