@@ -7,7 +7,7 @@ import {
   ModalContent,
   StyledModal,
 } from './Modal.styled';
-import { Button } from 'components/shared/Button/Button';
+// import { Button } from 'components/shared/Button/Button';
 
 const modalRoot = document.querySelector('#modal-root');
 

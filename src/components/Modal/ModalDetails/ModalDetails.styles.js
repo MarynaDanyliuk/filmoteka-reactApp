@@ -1,4 +1,4 @@
-import { StyledTitle } from 'components/shared/Title/Title.styles';
+// import { StyledTitle } from 'components/shared/Title/Title.styles';
 import styled from 'styled-components';
 
 export const StyledModalDetails = styled.div`
