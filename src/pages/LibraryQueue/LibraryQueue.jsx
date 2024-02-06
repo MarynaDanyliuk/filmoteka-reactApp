@@ -3,7 +3,7 @@ const LibraryQueue = props => {
   return (
     <div>
       <div>
-        <hi>Library QUEUE Page</hi>
+        <h1>Library QUEUE Page</h1>
       </div>
     </div>
   );

@@ -1,4 +1,10 @@
-import { ThemeProvider, createGlobalStyle } from 'styled-components';
+import {
+  ThemeProvider,
+  createGlobalStyle,
+  StyleSheetManager,
+} from 'styled-components';
+
+import isPropValid from '@emotion/is-prop-valid';
 
 export const GlobalStyle = createGlobalStyle`
 *,
@@ -33,7 +39,7 @@ img {
 }
 `;
 
-const baseTheme = {
+const theme = {
   mediaPoints: {
     mobile: '480px',
     tablet: '768px',
@@ -83,6 +89,7 @@ const baseTheme = {
   colors: {
     primaryColor: '#ffffff',
     accentColor: '#ff6b01',
+    // btnCloseColor: 'transparent',
     textColor: '#111111',
     backgroundColor: '#FEF9F9',
     borderButton: 'solid 1px #ffffff',
@@ -111,10 +118,19 @@ const baseTheme = {
 
 export const Theme = ({ children }) => {
   return (
-    <ThemeProvider theme={baseTheme}>
-      <GlobalStyle />
-      {children}
-    </ThemeProvider>
+    <StyleSheetManager
+      enableVendorPrefixes
+      shouldForwardProp={(propName, elementToBeRendered) => {
+        return typeof elementToBeRendered === 'string'
+          ? isPropValid(propName)
+          : true;
+      }}
+    >
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        {children}
+      </ThemeProvider>
+    </StyleSheetManager>
   );
 };
 

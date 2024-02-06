@@ -5,12 +5,12 @@ import Icon from 'components/shared/Icon/Icon';
 
 const SearchForm = ({ search }) => {
   return (
-    <Form $w="100%">
+    <Form w="100%">
       <Input type="text" placeholder="Search films..." />
       <Button
         type="submit"
         onClick={search}
-        $w="100%"
+        w="100%"
         style={{
           maxWidth: '32px',
           borderBottom: '1px solid white',

@@ -1,7 +1,13 @@
 import PropTypes from 'prop-types';
 import { Btn } from './Button.styles';
 
-export const Button = ({ children, onClick, type = 'submit', ...props }) => {
+export const Button = ({
+  children,
+  onClick,
+  type = 'submit',
+  name,
+  ...props
+}) => {
   return (
     <Btn onClick={onClick} type={type} {...props}>
       <span>{children}</span>

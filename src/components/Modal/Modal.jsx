@@ -7,6 +7,7 @@ import {
   ModalContent,
   StyledModal,
 } from './Modal.styled';
+import { Button } from 'components/shared/Button/Button';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -34,7 +35,13 @@ const Modal = ({ close, children, approve }) => {
     <StyledModal id="movie" onClick={closeModal}>
       <ModalBody>
         <ModalContent>
-          <ModalClose onClick={close} type="button">
+          <ModalClose
+            onClick={e => {
+              e.stopPropagation();
+              close();
+            }}
+            type="button"
+          >
             X
           </ModalClose>
           {children}

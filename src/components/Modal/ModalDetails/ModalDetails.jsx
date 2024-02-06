@@ -1,6 +1,15 @@
 import css from './ModalDetails.module.css';
 
-import { StyledModalDetails } from './ModalDetails.styles';
+import {
+  StyledModalDetails,
+  MovieImg,
+  // MovieTitle,
+  MovieInfoTable,
+  TableCategory,
+  TableData,
+} from './ModalDetails.styles';
+
+import { Title } from 'components/shared/Title/Title';
 
 const ModalDetails = ({ item }) => {
   const {
@@ -20,39 +29,36 @@ const ModalDetails = ({ item }) => {
   //     .join(', ');
   return (
     <StyledModalDetails>
-      <img
-        src={url}
-        alt={original_title}
-        className={css.image}
-        loading="lazy"
-      />
-      <div className={css.movie_descr}>
-        <p className={css.movie_title}>{original_title}</p>
-        <table className={css.movie_inform}>
+      <MovieImg src={url} alt={original_title} loading="lazy" />
+      <div>
+        <Title as="h3" align="start">
+          {original_title}
+        </Title>
+        <MovieInfoTable>
           <tbody>
-            <tr className={css.movie_info_item}>
-              <td className={css.list_category}>Vote/Votes</td>
-              <td className={css.list_data}>
+            <tr>
+              <TableCategory>Vote/Votes</TableCategory>
+              <TableData>
                 <span className={css.average}>{vote_average.toFixed(1)}</span> /{' '}
                 <span className={css.count}>{vote_count}</span>
-              </td>
+              </TableData>
             </tr>
-            <tr className={css.movie_info_item}>
-              <td className={css.list_category}>Popularity</td>
-              <td className={css.list_data}>{popularity.toFixed(1)}</td>
+            <tr>
+              <TableCategory>Popularity</TableCategory>
+              <TableData>{popularity.toFixed(1)}</TableData>
             </tr>
-            <tr className={css.movie_info_item}>
-              <td className={css.list_category}>Original Title</td>
-              <td className={css.list_data}>{original_title}</td>
+            <tr>
+              <TableCategory>Original Title</TableCategory>
+              <TableData>{original_title}</TableData>
             </tr>
-            <tr className={css.movie_info_item}>
-              <td className={css.list_category}>Genre</td>
-              {/* <td className={css.list_data}>{genresList}</td> */}
+            <tr>
+              <TableCategory>Genre</TableCategory>
+              <TableData>Genres list</TableData>
             </tr>
           </tbody>
-        </table>
-        <p>About</p>
-        <p className={css.movie_about}>${overview}</p>
+        </MovieInfoTable>
+        <Title>About</Title>
+        <p>{overview}</p>
       </div>
     </StyledModalDetails>
   );
