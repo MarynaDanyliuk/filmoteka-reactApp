@@ -8,12 +8,13 @@ const SearchForm = ({ search }) => {
     <Form w="100%">
       <Input type="text" placeholder="Search films..." />
       <Button
+        name="search"
         type="submit"
         onClick={search}
-        w="100%"
+        w="32"
         style={{
-          maxWidth: '32px',
           borderBottom: '1px solid white',
+          borderRadius: 0,
         }}
       >
         <Icon id="icon-search" />

@@ -1,31 +1,51 @@
 import styled from 'styled-components';
-import { setWidth } from 'utils/theme';
+import { setWidth, setHeight } from 'utils/theme';
 
 export const baseButtonStyles = `
   text-transform: uppercase;
   cursor: pointer;
-  border: transparent;
   background-color: transparent;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 export const Btn = styled.button`
   ${baseButtonStyles};
-  /* color: ${props => props.theme.colors.primaryColor}; */
-  width: ${setWidth};
-
-  color: ${props => {
+  border: ${props => {
     switch (props.name) {
-      case 'close':
-        return props.theme.colors.primaryColor;
-      // break;
-      case 'search':
-        return props.theme.colors.primaryColor;
-      case 'submit':
-        return props.theme.colors.primaryColor;
+      case 'modalNav':
+        return props.theme.colors.borderButtonBlack;
       default:
-        break;
+        return props.theme.colors.buttonOutline;
     }
   }};
+  width: ${setWidth};
+  height: ${setHeight};
+  color: ${props => {
+    switch (props.name) {
+      case 'modalNav':
+        return props.theme.colors.buttonColor;
+      default:
+        return props.theme.colors.primaryColor;
+    }
+  }};
+
+  &:focus,
+  &:hover,
+  &:active {
+    border: ${props => props.theme.colors.buttonOutline};
+    color: ${props => props.theme.colors.primaryColor};
+    background-color: ${props => {
+      switch (props.name) {
+        case 'search':
+          return props.theme.colors.backgroundModal;
+        default:
+          return props.theme.colors.accentColor;
+      }
+    }};
+  }
+  &::placeholder {
+    opacity: 1;
+  }
 `;

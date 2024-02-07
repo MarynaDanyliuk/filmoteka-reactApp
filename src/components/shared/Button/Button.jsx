@@ -9,8 +9,8 @@ export const Button = ({
   ...props
 }) => {
   return (
-    <Btn onClick={onClick} type={type} {...props}>
-      <span>{children}</span>
+    <Btn onClick={onClick} type={type} name={name} {...props}>
+      {children}
     </Btn>
   );
 };

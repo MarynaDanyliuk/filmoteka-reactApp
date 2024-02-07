@@ -1,4 +1,3 @@
-// import css from './Modal.module.css';
 import { createPortal } from 'react-dom';
 import { useEffect, useCallback } from 'react';
 import {
@@ -7,7 +6,6 @@ import {
   ModalContent,
   StyledModal,
 } from './Modal.styled';
-// import { Button } from 'components/shared/Button/Button';
 
 const modalRoot = document.querySelector('#modal-root');
 

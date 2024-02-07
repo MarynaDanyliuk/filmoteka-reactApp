@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { baseButtonStyles } from 'components/shared/Button/Button.styles';
-import { setWidth } from 'utils/theme';
+import { setWidth, setHeight } from 'utils/theme';
 
 import { NavLink } from 'react-router-dom';
 
@@ -13,11 +13,10 @@ export const NavLibrary = styled.nav`
 
 export const NavLinkBtn = styled(NavLink)`
   ${baseButtonStyles}
-  border: ${props => props.theme.colors.borderButton};
+  border: ${props => props.theme.colors.borderButtonWhite};
   color: ${props => props.theme.colors.primaryColor};
   width: ${setWidth};
-  height: 42px;
-  border-radius: 8px;
+  height: ${setHeight};
 
   &:hover,
   &:focus,

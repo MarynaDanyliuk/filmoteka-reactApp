@@ -8,9 +8,11 @@ import {
   TableData,
   MovieOvervie,
   MovieDescr,
+  ModalNav,
 } from './ModalDetails.styles';
 
 import { Title } from 'components/shared/Title/Title';
+import { Button } from 'components/shared/Button/Button';
 
 const ModalDetails = ({ item }) => {
   const {
@@ -85,6 +87,14 @@ const ModalDetails = ({ item }) => {
           About
         </Title>
         <MovieOvervie>{overview}</MovieOvervie>
+        <ModalNav>
+          <Button id="watched" type="submit" name="modalNav" h="44" w="136">
+            Add to watched
+          </Button>
+          <Button id="queue" type="submit" name="modalNav" h="44" w="136">
+            Add to queue
+          </Button>
+        </ModalNav>
       </MovieDescr>
     </StyledModalDetails>
   );
@@ -94,3 +104,5 @@ export default ModalDetails;
 ModalDetails.defaultProps = {
   items: [],
 };
+
+// class="button btn-modal"

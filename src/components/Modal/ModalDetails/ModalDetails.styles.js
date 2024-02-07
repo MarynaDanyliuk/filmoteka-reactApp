@@ -67,3 +67,8 @@ export const MovieOvervie = styled.p`
   line-height: ${props => props.theme.lineHeights.main};
   margin-bottom: 8px;
 `;
+
+export const ModalNav = styled.div`
+  display: flex;
+  gap: 16px;
+`;

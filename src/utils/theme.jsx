@@ -92,10 +92,15 @@ const theme = {
   colors: {
     primaryColor: '#ffffff',
     accentColor: '#ff6b01',
-    // btnCloseColor: 'transparent',
+    buttonColor: '#111111',
+    buttonModalNavColor: '#111111',
+    buttonHeaderNavColor: '#ffffff',
     textColor: '#111111',
+    titleColor: '#111111',
     backgroundColor: '#FEF9F9',
-    borderButton: 'solid 1px #ffffff',
+    buttonOutline: 'none',
+    borderButtonBlack: 'solid 1px #111111',
+    borderButtonWhite: 'solid 1px #ffffff',
     borderButtonAct: 'solid 1px #ff6b01',
     inputBorder: 'solid 1px #ffffff',
     inputOutline: 'none',
@@ -106,7 +111,7 @@ const theme = {
     pagginationOutline: 'none',
     // link: '#54ADFF',
     // grey: '#888888',
-    // titleColor: '#111111',
+
     // yellow: '#FFC107',
     // green: '#00C3AD',
     // red: '#F43F5E',
@@ -143,5 +148,14 @@ export function setWidth({ w }) {
     return `${w}`;
   } else {
     return `${w}px`;
+  }
+}
+
+export function setHeight({ h }) {
+  if (!h) return 'none';
+  if (h && h.endsWith('%')) {
+    return `${h}`;
+  } else {
+    return `${h}px`;
   }
 }
