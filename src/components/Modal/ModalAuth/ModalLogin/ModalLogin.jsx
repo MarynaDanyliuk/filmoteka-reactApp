@@ -1,6 +1,6 @@
 import css from './ModalLogin.module.css';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { ContainerView, StyledForm, StyledField } from './ModalLogin.styles';
+import { Formik } from 'formik';
+import { StyledForm, StyledField } from './ModalLogin.styles';
 
 // import { useState } from 'react';
 
@@ -26,12 +26,12 @@ const ModalLogin = ({ close }) => {
         <StyledField type="email" name="email" placeholder="Login" />
 
         <StyledField type="password" name="password" placeholder="Password" />
-        {/* <button type="submit" className="button btn-modal-auth" onClick={close}>
+        <button type="submit" className="button btn-modal-auth" onClick={close}>
           Login
-        </button> */}
-        {/* <a href="#register" id="register-link" className={css.nav_link}>
+        </button>
+        <a href="#register" id="register-link" className={css.nav_link}>
           Register
-        </a> */}
+        </a>
       </StyledForm>
     </Formik>
   );

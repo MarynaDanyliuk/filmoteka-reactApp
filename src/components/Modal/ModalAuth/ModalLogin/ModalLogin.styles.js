@@ -1,20 +1,7 @@
 import styled from 'styled-components';
-import { setWidth } from 'utils/theme';
+// import { setWidth } from 'utils/theme';
 
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-
-// export const ContainerView = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   flex-direction: column;
-
-//   padding: 60px 16px;
-//   @media ${props => props.theme.media.tab} {
-//     width: 608px;
-//     height: 354px;
-//   }
-// `;
+import { Formik, Form, Field } from 'formik';
 
 export const StyledFormik = styled(Formik)`
   display: flex;
