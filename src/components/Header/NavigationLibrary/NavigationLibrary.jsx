@@ -11,7 +11,7 @@ const NavigationLibrary = () => {
       <NavLinkBtn id="watched" name="headerNav" to="/library/watched" w="148">
         Watched
       </NavLinkBtn>
-      <NavLinkBtn id="queue" to="/library/queue" w="148" h="42">
+      <NavLinkBtn id="queue" to="/library/queue" w="148" h="44">
         Queue
       </NavLinkBtn>
     </NavLibrary>

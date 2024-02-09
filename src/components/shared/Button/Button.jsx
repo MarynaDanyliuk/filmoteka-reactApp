@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { Btn } from './Button.styles';
+import { StyledButton } from './Button.styles';
 
 export const Button = ({
   children,
@@ -9,9 +9,9 @@ export const Button = ({
   ...props
 }) => {
   return (
-    <Btn onClick={onClick} type={type} name={name} {...props}>
+    <StyledButton onClick={onClick} type={type} name={name} {...props}>
       {children}
-    </Btn>
+    </StyledButton>
   );
 };
 

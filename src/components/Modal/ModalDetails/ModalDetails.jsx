@@ -9,6 +9,7 @@ import {
   MovieOvervie,
   MovieDescr,
   ModalNav,
+  MovieWrap,
 } from './ModalDetails.styles';
 
 import { Title } from 'components/shared/Title/Title';
@@ -32,7 +33,9 @@ const ModalDetails = ({ item }) => {
   //     .join(', ');
   return (
     <StyledModalDetails>
-      <MovieImg src={url} alt={original_title} loading="lazy" />
+      <MovieWrap>
+        <MovieImg src={url} alt={original_title} loading="lazy" />
+      </MovieWrap>
       <MovieDescr>
         <Title
           as="h1"
@@ -88,10 +91,10 @@ const ModalDetails = ({ item }) => {
         </Title>
         <MovieOvervie>{overview}</MovieOvervie>
         <ModalNav>
-          <Button id="watched" type="submit" name="modalNav" h="44" w="136">
+          <Button id="watched" type="submit" name="modalNav" h="44">
             Add to watched
           </Button>
-          <Button id="queue" type="submit" name="modalNav" h="44" w="136">
+          <Button id="queue" type="submit" name="modalNav" h="44">
             Add to queue
           </Button>
         </ModalNav>

@@ -9,7 +9,7 @@ import {
 
 const modalRoot = document.querySelector('#modal-root');
 
-const Modal = ({ close, children, approve }) => {
+const Modal = ({ close, h, children, approve }) => {
   const closeModal = useCallback(
     ({ target, currentTarget, code }) => {
       if (target === currentTarget || code === 'Escape') {
@@ -28,11 +28,10 @@ const Modal = ({ close, children, approve }) => {
     };
   }, [closeModal]);
 
-  console.log('Close function:', close);
   return createPortal(
-    <StyledModal id="movie" onClick={closeModal}>
+    <StyledModal id="movie" h={h} onClick={closeModal}>
       <ModalBody>
-        <ModalContent>
+        <ModalContent h={h}>
           <ModalClose
             onClick={e => {
               e.stopPropagation();

@@ -12,16 +12,7 @@ export const StyledTitle = styled.h1`
   text-transform: ${props => props.textTransform || 'uppercase'};
 
   @media ${props => props.theme.media.tab} {
-    /* font-weight: ${props =>
-      props.tabWeight || props.theme.fontWeiths.semi}; */
     font-size: ${props => props.tabSize || props.theme.fontSizes.l};
-    /* line-height: ${props => props.tabLine || '1.172'}; */
-  }
-  @media ${props => props.theme.media.desk} {
-    /* font-weight: ${props =>
-      props.deskWeight || props.theme.fontWeiths.semi}; */
-    /* font-size: ${props => props.deskSize || props.theme.fontSizes.l}; */
-    /* line-height: ${props => props.deskLine || '1.175'}; */
   }
 `;
 

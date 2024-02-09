@@ -1,59 +1,87 @@
 import css from './ModalLogin.module.css';
-import { useState } from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { ContainerView, StyledForm, StyledField } from './ModalLogin.styles';
+
+// import { useState } from 'react';
 
 const ModalLogin = ({ close }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  // ____________FORMIK_________________
+  const initialValues = { email: 'mary', password: '123' };
 
-  const handleChange = e => {
-    const { name, value } = e.target;
-    switch (name) {
-      case 'email':
-        setEmail(value);
-        break;
-      case 'password':
-        setPassword(value);
-        break;
-      default:
-        return;
-    }
+  const handleSubmit = (values, actions) => {
+    console.log(values);
+    console.log(actions);
+    // (values, { setSubmitting }) => {
+    //   setTimeout(() => {
+    //     alert(JSON.stringify(values, null, 2));
+    //     setSubmitting(false);
+    //   }, 400);
+    // };
   };
 
   //   console.log(email, password);
   return (
-    <form className={css.form_auth}>
-      <input
-        type="email"
-        name="email"
-        onChange={handleChange}
-        value={email}
-        autoComplete="current-password"
-        placeholder="Login"
-        className={css.input}
-      />
-      <input
-        type="password"
-        name="password"
-        onChange={handleChange}
-        value={password}
-        autoComplete="current-password"
-        placeholder="Password"
-        className={css.input}
-      />
-      <button type="submit" className="button btn-modal-auth" onClick={close}>
-        Login
-      </button>
-      <a href="#register" id="register-link" className={css.nav_link}>
-        Register
-      </a>
-    </form>
+    <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+      <StyledForm autoComplete="off">
+        <StyledField type="email" name="email" placeholder="Login" />
+
+        <StyledField type="password" name="password" placeholder="Password" />
+        {/* <button type="submit" className="button btn-modal-auth" onClick={close}>
+          Login
+        </button> */}
+        {/* <a href="#register" id="register-link" className={css.nav_link}>
+          Register
+        </a> */}
+      </StyledForm>
+    </Formik>
   );
 };
 
 export default ModalLogin;
 
-{
-  /* <div id="login" class="modal">
+/* <ErrorMessage name="password" component="div" /> */
+
+/* <ErrorMessage name="email" component="div" /> */
+
+// const [email, setEmail] = useState('');
+// const [password, setPassword] = useState('');
+
+// const handleSubmit = e => {
+//   e.preventDefault();
+//   console.log(e.target.elements);
+
+//   const { email, password } = e.target.elements;
+//   console.log(email.value, password.value);
+
+// };
+
+// const handleChange = e => {
+//   const { name, value } = e.target;
+//   switch (name) {
+//     case 'email':
+//       setEmail(value);
+//       break;
+//     case 'password':
+//       setPassword(value);
+//       break;
+//     default:
+//       return;
+//   }
+// };
+
+// validate={values => {
+//   const errors = {};
+//   if (!values.email) {
+//     errors.email = 'Required';
+//   } else if (
+//     !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+//   ) {
+//     errors.email = 'Invalid email address';
+//   }
+//   return errors;
+// }}
+
+/* <div id="login" class="modal">
   <div class="modal-body">
     <div class="modal-content">
       <a href="" class="modal-close">
@@ -72,4 +100,3 @@ export default ModalLogin;
     </div>
   </div>
 </div>; */
-}

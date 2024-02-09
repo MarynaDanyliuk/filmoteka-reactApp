@@ -4,6 +4,7 @@
   font-size: 14px;
   align-items: center;
   max-width: 100%;
+  padding: 20px;
 
   @media (min-width: $widthMobile) {
     width: 240px;

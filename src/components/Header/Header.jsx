@@ -1,6 +1,9 @@
 import SearchForm from './SearchForm/SearchForm';
 import Icon from '../shared/Icon/Icon';
 import NavigationLibrary from './NavigationLibrary/NavigationLibrary';
+import { useState } from 'react';
+import Modal from '../Modal/Modal';
+import ModalLogin from '../Modal/ModalAuth/ModalLogin/ModalLogin';
 import {
   HeaderContainer,
   HeaderNav,
@@ -9,6 +12,7 @@ import {
 } from './Header.styles';
 
 const Header = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <HeaderContainer>
       <HeaderNav>
@@ -18,7 +22,23 @@ const Header = () => {
         </StyledNavLink>
         <HeaderList>
           <StyledNavLink to="/">Home</StyledNavLink>
-          <StyledNavLink to="/library/watched">My Library</StyledNavLink>
+          <StyledNavLink
+            to="/library/watched"
+            onClick={() => setIsModalOpen(true)}
+          >
+            My Library
+          </StyledNavLink>
+          {isModalOpen && (
+            <Modal
+              h="fit-content"
+              close={() => setIsModalOpen(false)}
+              approve={() => {
+                console.log('rere');
+              }}
+            >
+              <ModalLogin />
+            </Modal>
+          )}
         </HeaderList>
       </HeaderNav>
       <SearchForm />

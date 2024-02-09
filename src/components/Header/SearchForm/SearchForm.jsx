@@ -11,10 +11,10 @@ const SearchForm = ({ search }) => {
         name="search"
         type="submit"
         onClick={search}
-        w="32"
         style={{
           borderBottom: '1px solid white',
           borderRadius: 0,
+          maxWidth: '32px',
         }}
       >
         <Icon id="icon-search" />

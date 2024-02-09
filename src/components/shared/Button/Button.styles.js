@@ -1,26 +1,24 @@
 import styled from 'styled-components';
-import { setWidth, setHeight } from 'utils/theme';
+import { setHeight } from 'utils/theme';
 
 export const baseButtonStyles = `
   text-transform: uppercase;
   cursor: pointer;
   background-color: transparent;
+  border: none;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-export const Btn = styled.button`
+export const StyledButton = styled.button`
   ${baseButtonStyles};
   border: ${props => {
     switch (props.name) {
       case 'modalNav':
         return props.theme.colors.borderButtonBlack;
-      default:
-        return props.theme.colors.buttonOutline;
     }
   }};
-  width: ${setWidth};
   height: ${setHeight};
   color: ${props => {
     switch (props.name) {
@@ -45,7 +43,10 @@ export const Btn = styled.button`
       }
     }};
   }
-  &::placeholder {
-    opacity: 1;
+  max-width: 110px;
+
+  @media ${props => props.theme.media.tab} {
+    max-width: 100%;
+    width: 136px;
   }
 `;
