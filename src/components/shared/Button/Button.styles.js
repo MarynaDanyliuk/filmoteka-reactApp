@@ -17,6 +17,8 @@ export const StyledButton = styled.button`
     switch (props.name) {
       case 'modalNav':
         return props.theme.colors.borderButtonBlack;
+      default:
+        return;
     }
   }};
   height: ${setHeight};
