@@ -1,10 +1,14 @@
 import css from './ModalLogin.module.css';
 import * as Yup from 'yup';
+import { useState } from 'react';
 import { Formik, ErrorMessage } from 'formik';
 
 import { StyledForm, StyledField } from './ModalLogin.styles';
 
 import { Button } from 'components/shared/Button/Button';
+
+import ModalRegister from '../ModalRegister/ModalRegister';
+import Modal from 'components/Modal/Modal.jsx';
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Email is required'),
@@ -14,6 +18,7 @@ const schema = Yup.object().shape({
 const initialValues = { email: '', password: '' };
 
 const ModalLogin = ({ close }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
 
@@ -45,9 +50,25 @@ const ModalLogin = ({ close }) => {
         <Button type="submit" name="modal" h="44" onClick={close}>
           Login
         </Button>
-        <a href="#register" id="register-link" className={css.nav_link}>
+        <a
+          href="#register"
+          onClick={() => setIsModalOpen(true)}
+          id="register-link"
+          className={css.nav_link}
+        >
           Register
         </a>
+        {isModalOpen && (
+          <Modal
+            h="fit-content"
+            close={() => setIsModalOpen(false)}
+            approve={() => {
+              console.log('rere');
+            }}
+          >
+            <ModalRegister />
+          </Modal>
+        )}
       </StyledForm>
     </Formik>
   );
