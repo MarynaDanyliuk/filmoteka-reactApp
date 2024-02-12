@@ -51,7 +51,6 @@ export const MovieDescr = styled.div`
 
 export const MovieInfoTable = styled.table`
   margin-bottom: 20px;
-  /* width: 100%; */
 `;
 
 export const TableCategory = styled.td`
@@ -82,6 +81,10 @@ export const ModalNav = styled.div`
   justify-content: center;
   gap: 16px;
   max-width: 100%;
+
+  @media ${props => props.theme.media.tab} {
+    justify-content: normal;
+  }
 `;
 
 // export const ContainerModal = styled.div`

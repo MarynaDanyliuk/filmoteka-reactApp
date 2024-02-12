@@ -11,7 +11,7 @@ export const StyledModal = styled.div`
   background-color: transparent;
 
   transition: all cubic-bezier(0.86, 0, 0.07, 1);
-  overflow-y: auto;
+  /* overflow-y: auto; */
 
   display: flex;
   justify-content: center;
@@ -27,6 +27,8 @@ export const ModalBody = styled.div`
 `;
 
 export const ModalContent = styled.div`
+  margin-top: 12px;
+  /* margin-bottom: 12px; */
   position: relative;
   padding: 30px 16px;
   background-color: #fff;

@@ -15,7 +15,7 @@ export const StyledButton = styled.button`
   ${baseButtonStyles};
   border: ${props => {
     switch (props.name) {
-      case 'modalNav':
+      case 'modal':
         return props.theme.colors.borderButtonBlack;
       default:
         return;
@@ -24,7 +24,7 @@ export const StyledButton = styled.button`
   height: ${setHeight};
   color: ${props => {
     switch (props.name) {
-      case 'modalNav':
+      case 'modal':
         return props.theme.colors.buttonColor;
       default:
         return props.theme.colors.primaryColor;
@@ -45,10 +45,7 @@ export const StyledButton = styled.button`
       }
     }};
   }
-  max-width: 110px;
 
-  @media ${props => props.theme.media.tab} {
-    max-width: 100%;
-    width: 136px;
-  }
+  width: 100%;
+  max-width: 136px;
 `;

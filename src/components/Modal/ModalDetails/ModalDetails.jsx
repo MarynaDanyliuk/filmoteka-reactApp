@@ -91,10 +91,10 @@ const ModalDetails = ({ item }) => {
         </Title>
         <MovieOvervie>{overview}</MovieOvervie>
         <ModalNav>
-          <Button id="watched" type="submit" name="modalNav" h="44">
+          <Button id="watched" type="submit" name="modal" h="44">
             Add to watched
           </Button>
-          <Button id="queue" type="submit" name="modalNav" h="44">
+          <Button id="queue" type="submit" name="modal" h="44">
             Add to queue
           </Button>
         </ModalNav>

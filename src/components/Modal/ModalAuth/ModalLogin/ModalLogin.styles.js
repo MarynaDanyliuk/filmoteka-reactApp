@@ -1,27 +1,16 @@
 import styled from 'styled-components';
-// import { setWidth } from 'utils/theme';
 
-import { Formik, Form, Field } from 'formik';
-
-export const StyledFormik = styled(Formik)`
-  display: flex;
-  align-items: center;
-`;
+import { Form, Field } from 'formik';
 
 export const StyledForm = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* max-width: 100%; */
-  /* padding: 0 16px; */
-  background-color: aqua;
+  /* background-color: aqua; */
   width: 100%;
   max-width: 280px;
-  @media ${props => props.theme.media.phone} {
-    width: 280px;
-  }
   @media ${props => props.theme.media.tab} {
-    width: 340px;
+    max-width: 340px;
   }
 `;
 
@@ -32,47 +21,9 @@ export const StyledField = styled(Field)`
   border: solid 1px grey;
   opacity: 0.7;
 
-  width: 100%;
-
-  @media ${props => props.theme.media.phone} {
-    width: 240px;
-    padding: 16px;
-  }
-
+  width: calc(100vw - 40px);
+  max-width: 280px;
   @media ${props => props.theme.media.tab} {
-    width: 320px;
-    padding: 16px;
+    max-width: 100%;
   }
 `;
-
-/* justify-content: center;
-  align-items: center; */
-/* margin: 20px; */
-/* padding: 20px; */
-/* height: 50vh; */
-//   overflow-y: auto;
-//   overflow-x: hidden;
-//   padding: 16px;
-//   max-width: 280px;
-//   @media ${props => props.theme.media.tab} {
-//     display: flex;
-//     max-width: 704px;
-//   }
-//   @media ${props => props.theme.media.desk} {
-//     max-width: 806px;
-//   }
-
-//   display: flex;
-//   flex-direction: column;
-//   font-size: 14px;
-//   align-items: center;
-//   max-width: 100%;
-//   padding: 20px;
-
-//   @media (min-width: $widthMobile) {
-//     width: 240px;
-//   }
-
-//   @media (min-width: $widthTablet) {
-//     width: 320px;
-//   }
