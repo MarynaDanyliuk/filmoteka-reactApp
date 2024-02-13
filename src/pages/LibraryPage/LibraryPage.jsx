@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import Container from 'components/shared/Container/Container';
+import { Container } from 'components/shared/Container/Container';
 import Gallery from 'components/Gallery/Gallery';
 import LoadMoreButton from 'components/LoadMoreButton/LoadMoreButton';
 

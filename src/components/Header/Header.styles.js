@@ -8,14 +8,14 @@ import abstractBackground_mob_1x from '../../images/abstractBackground_mob_1x.jp
 import abstractBackground_mob_2x from '../../images/abstractBackground_mob_2x.jpg';
 
 export const HeaderContainer = styled.div`
-  padding: 40px 32px 0;
+  /* padding: 40px 32px 0; */
   background-image: url('${abstractBackground_mob_1x}');
   background-position: center;
   background-size: cover;
   @media ${props => props.theme.mediaRetina.retinaSize} {
     background-image: url('${abstractBackground_mob_2x}');
   }
-
+  padding-top: 40px;
   margin-bottom: 60px;
 
   @media ${props => props.theme.media.tab} {

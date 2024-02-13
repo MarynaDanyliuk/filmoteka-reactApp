@@ -4,6 +4,7 @@ import NavigationLibrary from './NavigationLibrary/NavigationLibrary';
 import { useState } from 'react';
 import Modal from '../Modal/Modal';
 import ModalLogin from '../Modal/ModalAuth/ModalLogin/ModalLogin';
+import { Container } from 'components/shared/Container/Container';
 import {
   HeaderContainer,
   HeaderNav,
@@ -11,43 +12,45 @@ import {
   StyledNavLink,
 } from './Header.styles';
 
-const Header = () => {
+export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <HeaderContainer>
-      <HeaderNav>
-        <StyledNavLink to="/">
-          <Icon id="icon-film" />
-          Filmoteka
-        </StyledNavLink>
-        <HeaderList>
-          <StyledNavLink to="/">Home</StyledNavLink>
-          <StyledNavLink
-            to="/library/watched"
-            onClick={() => setIsModalOpen(true)}
-          >
-            My Library
+      <Container>
+        <HeaderNav>
+          <StyledNavLink to="/">
+            <Icon id="icon-film" />
+            Filmoteka
           </StyledNavLink>
-          {isModalOpen && (
-            <Modal
-              h="fit-content"
-              close={() => setIsModalOpen(false)}
-              approve={() => {
-                console.log('rere');
-              }}
+          <HeaderList>
+            <StyledNavLink to="/">Home</StyledNavLink>
+            <StyledNavLink
+              to="/library/watched"
+              onClick={() => setIsModalOpen(true)}
             >
-              <ModalLogin />
-            </Modal>
-          )}
-        </HeaderList>
-      </HeaderNav>
-      <SearchForm />
-      <NavigationLibrary />
+              My Library
+            </StyledNavLink>
+            {isModalOpen && (
+              <Modal
+                h="fit-content"
+                close={() => setIsModalOpen(false)}
+                approve={() => {
+                  console.log('rere');
+                }}
+              >
+                <ModalLogin />
+              </Modal>
+            )}
+          </HeaderList>
+        </HeaderNav>
+        <SearchForm />
+        <NavigationLibrary />
+      </Container>
     </HeaderContainer>
   );
 };
 
-export default Header;
+// export default Header;
 
 // _________________________________
 // style = 'mar gin-right: 8px';

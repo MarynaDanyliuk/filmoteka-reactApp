@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import Container from 'components/shared/Container/Container';
 import Gallery from 'components/Gallery/Gallery';
 import LoadMoreButton from 'components/LoadMoreButton/LoadMoreButton';
 
@@ -52,13 +51,13 @@ const HomePage = () => {
   const { items, loading, error } = state;
 
   return (
-    <Container>
+    <>
       <h1>Home page</h1>
       {items.length > 0 && <Gallery items={items} />}
       {loading && <p>...loading</p>}
       {error && <p>...load failed</p>}
       <LoadMoreButton />
-    </Container>
+    </>
   );
 };
 
