@@ -1,11 +1,10 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Theme } from '../utils/theme';
 
 import { Header } from '../components/Header/Header';
 import { SharedLayout } from '../components/SharedLayout/SharedLayout';
 
-// import PublicRoute from '../Routes/PublicRoutes/PublicRoutes';
 import PrivateRoute from '../Routes/PrivateRoutes/PrivateRoutes';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
@@ -20,41 +19,44 @@ export const App = () => {
   return (
     <Theme>
       <Header />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={<HomePage />} />
-            <Route
-              path="/library"
-              element={
-                <PrivateRoute
-                  redirectTo="/library/watched"
-                  component={<LibraryWatched />}
-                />
-              }
-            />
-            <Route
-              path="/library/queue"
-              element={
-                <PrivateRoute
-                  redirectTo="/library/queue"
-                  component={<LibraryQueue />}
-                />
-              }
-            />
-
-            {/* <Route path="/library" element={<PrivateRoute />}> */}
-            {/* <Route path="/library" element={<LibraryPage />}></Route>
-            <Route path="/library/watched" element={<LibraryWatched />} />
-            <Route path="/library/queue" element={<LibraryQueue />} /> */}
-            {/* </Route> */}
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route
+            path="/library"
+            element={
+              <PrivateRoute
+                redirectTo="/library/watched"
+                component={<LibraryWatched />}
+              />
+            }
+          />
+          <Route path="/library/watched" element={<LibraryWatched />} />
+          <Route path="/library/queue" element={<LibraryQueue />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
     </Theme>
   );
 };
+
+/* <Route
+            path="/library"
+            element={
+              <PrivateRoute
+                redirectTo="/library/watched"
+                component={<LibraryWatched />}
+              />
+            }
+          /> */
+
+/* <Route path="/library" element={<PrivateRoute />}> */
+
+/* <Route path="/library" element={<LibraryPage />}></Route>
+            <Route path="/library/watched" element={<LibraryWatched />} />
+            <Route path="/library/queue" element={<LibraryQueue />} /> */
+
+/* </Route> */
 
 // export const App = () => {
 //   return (

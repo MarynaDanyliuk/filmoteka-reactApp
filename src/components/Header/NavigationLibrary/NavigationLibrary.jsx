@@ -8,10 +8,10 @@ import { NavLibrary, NavLinkBtn } from './NavigationLibrary.styles';
 const NavigationLibrary = () => {
   return (
     <NavLibrary>
-      <NavLinkBtn id="watched" name="headerNav" to="/library/watched" w="148">
+      <NavLinkBtn name="headerNav" to="/library/watched" w="148">
         Watched
       </NavLinkBtn>
-      <NavLinkBtn id="queue" to="/library/queue" w="148" h="44">
+      <NavLinkBtn to="/library/queue" w="148" h="44">
         Queue
       </NavLinkBtn>
     </NavLibrary>
