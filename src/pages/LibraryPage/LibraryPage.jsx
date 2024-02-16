@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Gallery from 'components/Gallery/Gallery';
 import LoadMoreButton from 'components/LoadMoreButton/LoadMoreButton';
 
-import { fetchMovies } from '../../services/apiService';
+import { fetchMovies } from '../../services/serviceApiMovies';
 import { Outlet } from 'react-router-dom';
 
 // import css from '../LibraryPage/LibraryPage.module.css';
