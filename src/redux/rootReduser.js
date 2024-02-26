@@ -3,9 +3,9 @@ import { combineReducers } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-// import moviesReducer from './movies/movies-slice';
 // import filterReducer from './filter/filter-slice';
 import authReducer from './auth/authSlice';
+import moviesReducer from './movies/moviesSlice';
 
 const persistConfig = {
   key: 'root',
@@ -16,9 +16,9 @@ const persistConfig = {
 const persistedAuthReducer = persistReducer(persistConfig, authReducer);
 
 const rootReducer = combineReducers({
-  //   movies: moviesReducer,
   //   filter: filterReducer,
   auth: persistedAuthReducer,
+  movies: moviesReducer,
 });
 
 export default rootReducer;

@@ -21,7 +21,7 @@ const HomePage = () => {
           error: null,
         }));
         const result = await fetchMovies();
-        // console.log(result);
+        console.log(result);
         setState(prevState => {
           return {
             ...prevState,
