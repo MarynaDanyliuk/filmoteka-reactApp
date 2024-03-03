@@ -5,10 +5,14 @@ import { Formik, ErrorMessage } from 'formik';
 
 import { StyledForm, StyledField } from './ModalLogin.styles';
 
-import { Button } from 'components/shared/Button/Button';
+import { useDispatch } from 'react-redux';
 
+import { Button } from 'components/shared/Button/Button';
 import ModalRegister from '../ModalRegister/ModalRegister';
 import Modal from 'components/Modal/Modal.jsx';
+
+// import { isUserLogin } from '../../../../redux/auth/authSelectors';
+import { login } from '../../../../redux/auth/authOperations';
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Email is required'),
@@ -16,14 +20,42 @@ const schema = Yup.object().shape({
 });
 
 const initialValues = { email: '', password: '' };
+// redux / movies / moviesSelectors;
 
 const ModalLogin = ({ close }) => {
+  const [state, setState] = useState({ ...initialValues });
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const dispatch = useDispatch();
+  // const isLogin = useSelector(isUserLogin);
+
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
 
+    const { email, password } = values;
+    setState({ ...initialValues });
+    console.log({ email, password });
+    // if (isDublicate(email)) {
+    //   alert(`${email} is alredy in contacts!`);
+    //   setState({ email, password });
+    //   return false;
+    // }
+    dispatch(login({ email, password }));
     resetForm();
   };
+
+  // const isDublicate = email => {
+  //   const normalizedName = email.toLowerCase();
+  //   const result = isUserLogin.find(({ email }) => {
+  //     return email.toLowerCase() === normalizedName;
+  //   });
+
+  //   return Boolean(result);
+  // };
+
+  // if (isLogin) {
+  //   return <Navigate to="/my-books" />;
+  // }
 
   return (
     <Formik

@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { Formik, ErrorMessage } from 'formik';
 
 import { StyledForm, StyledField } from './ModalRegister.styles';
+import { signup } from '../../../../redux/auth/authOperations';
+import { useDispatch } from 'react-redux';
 
 import { Button } from 'components/shared/Button/Button';
 import Modal from 'components/Modal/Modal.jsx';
@@ -17,9 +19,12 @@ const initialValues = { email: '', password: '', passwordConfirm: '' };
 
 const ModalRegister = ({ close }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
-
+    dispatch(signup(values));
     resetForm();
   };
 

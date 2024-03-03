@@ -7,6 +7,11 @@ const instance = axios.create({
   baseURL: 'https://api.themoviedb.org/3/',
 });
 
+// export const getAllBooks = async () => {
+//   const { data } = await booksInstance.get('/');
+//   return data;
+// };
+
 export const getAllMovies = async () => {
   const options = {
     method: 'GET',
@@ -37,8 +42,8 @@ export const getAllMovies = async () => {
 //   baseURL: 'https://63fdea50cd13ced3d7c21a98.mockapi.io/contacts',
 // });
 
-export const getAllMoviesByUserCollection = async key => {
-  const { data } = await authInstance.get(`/library/${key}`);
+export const getAllMoviesByUserCollection = async () => {
+  const { data } = await authInstance.get(`/library`);
   // console.log(data);
   return data;
 };
@@ -53,6 +58,16 @@ export const deleteMovie = async (id, key) => {
   // console.log(data);
   return data;
 };
+
+// export const addBook = async data => {
+//   const { data: result } = await booksInstance.post('/', data);
+//   return result;
+// };
+
+// export const deleteBook = async id => {
+//   const { data } = await booksInstance.delete(`/${id}`);
+//   return data;
+// };
 
 // _____________________ async fetch CLASS _____________________________
 

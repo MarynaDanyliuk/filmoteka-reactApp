@@ -8,6 +8,8 @@ import {
 
 const initialState = {
   items: [],
+  watched: [],
+  queue: [],
   isLoading: false,
   error: null,
 };

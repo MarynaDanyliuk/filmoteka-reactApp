@@ -1,9 +1,5 @@
 import axios from 'axios';
 
-// const authInstance = axios.create({
-//   baseURL: 'https://auth-backend-lesson.herokuapp.com/api',
-// });
-
 const authInstance = axios.create({
   baseURL: 'https://filmoteka-reactapp-backend.vercel.app/',
 });
@@ -16,14 +12,14 @@ const setToken = token => {
 };
 
 export const signup = async data => {
-  const { data: result } = await authInstance.post('./users/signup', data);
+  const { data: result } = await authInstance.post('/api/users/signup', data);
   setToken(result.token);
-  // console.log(result);
+  console.log(result);
   return result;
 };
 
 export const login = async data => {
-  const { data: result } = await authInstance.post('./users/login', data);
+  const { data: result } = await authInstance.post('/login', data);
   setToken(result.token);
   console.log(result);
   return result;
@@ -32,7 +28,7 @@ export const login = async data => {
 export const getCurrent = async token => {
   try {
     setToken(token);
-    const { data } = await authInstance.get('/users/current');
+    const { data } = await authInstance.get('/current');
     return data;
   } catch (error) {
     setToken();
@@ -41,9 +37,15 @@ export const getCurrent = async token => {
 };
 
 export const logout = async () => {
-  const { data } = await authInstance.post('/users/logout');
+  const { data } = await authInstance.post('/logout');
   setToken();
   return data;
 };
 
 export default authInstance;
+
+// _________________________________________________
+
+// const authInstance = axios.create({
+//   baseURL: 'https://auth-backend-lesson.herokuapp.com/api',
+// });
