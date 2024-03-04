@@ -19,7 +19,7 @@ export const signup = async data => {
 };
 
 export const login = async data => {
-  const { data: result } = await authInstance.post('/login', data);
+  const { data: result } = await authInstance.post('/api/users/login', data);
   setToken(result.token);
   console.log(result);
   return result;
@@ -28,7 +28,7 @@ export const login = async data => {
 export const getCurrent = async token => {
   try {
     setToken(token);
-    const { data } = await authInstance.get('/current');
+    const { data } = await authInstance.get('/api/users/current');
     return data;
   } catch (error) {
     setToken();
@@ -37,7 +37,7 @@ export const getCurrent = async token => {
 };
 
 export const logout = async () => {
-  const { data } = await authInstance.post('/logout');
+  const { data } = await authInstance.post('/api/users/logout');
   setToken();
   return data;
 };
