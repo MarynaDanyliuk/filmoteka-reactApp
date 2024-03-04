@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
-import { useState, Navigate } from 'react';
+import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
 
