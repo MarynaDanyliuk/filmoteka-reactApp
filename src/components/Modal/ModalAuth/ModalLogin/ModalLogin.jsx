@@ -1,18 +1,16 @@
-import css from './ModalLogin.module.css';
 import * as Yup from 'yup';
-import { useState } from 'react';
+import { useState, Navigate } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
 
 import { StyledForm, StyledField } from './ModalLogin.styles';
-
-import { useDispatch } from 'react-redux';
+import { login } from '../../../../redux/auth/authOperations';
 
 import { Button } from 'components/shared/Button/Button';
 import ModalRegister from '../ModalRegister/ModalRegister';
 import Modal from 'components/Modal/Modal.jsx';
 
-// import { isUserLogin } from '../../../../redux/auth/authSelectors';
-import { login } from '../../../../redux/auth/authOperations';
+import { isUserLogin } from '../../../../redux/auth/authSelectors';
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Email is required'),
@@ -23,25 +21,23 @@ const initialValues = { email: '', password: '' };
 // redux / movies / moviesSelectors;
 
 const ModalLogin = ({ close }) => {
-  const [state, setState] = useState({ ...initialValues });
+  // const [state, setState] = useState({ ...initialValues });
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const dispatch = useDispatch();
-  // const isLogin = useSelector(isUserLogin);
+  const isLogin = useSelector(isUserLogin);
 
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
-
-    const { email, password } = values;
-    setState({ ...initialValues });
-    console.log({ email, password });
+    dispatch(login(values));
+    resetForm();
+    // const { email, password } = values;
+    // setState({ ...initialValues });
     // if (isDublicate(email)) {
     //   alert(`${email} is alredy in contacts!`);
     //   setState({ email, password });
     //   return false;
     // }
-    dispatch(login({ email, password }));
-    resetForm();
   };
 
   // const isDublicate = email => {
@@ -53,9 +49,9 @@ const ModalLogin = ({ close }) => {
   //   return Boolean(result);
   // };
 
-  // if (isLogin) {
-  //   return <Navigate to="/my-books" />;
-  // }
+  if (isLogin) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <Formik
@@ -86,7 +82,7 @@ const ModalLogin = ({ close }) => {
           href="#register"
           onClick={() => setIsModalOpen(true)}
           id="register-link"
-          className={css.nav_link}
+          // className={css.nav_link}
         >
           Register
         </a>
@@ -107,6 +103,9 @@ const ModalLogin = ({ close }) => {
 };
 
 export default ModalLogin;
+
+// import css from './ModalLogin.module.css';
+// _________________________________________
 
 // const newData = Object.keys(values).reduce((acc, key) => {
 //   return values[key] ? { ...acc, [key]: values[key] } : acc;

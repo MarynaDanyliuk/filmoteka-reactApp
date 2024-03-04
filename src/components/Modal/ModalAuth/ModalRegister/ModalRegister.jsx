@@ -1,14 +1,14 @@
 import * as Yup from 'yup';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
 
 import { StyledForm, StyledField } from './ModalRegister.styles';
 import { signup } from '../../../../redux/auth/authOperations';
-import { useDispatch } from 'react-redux';
 
 import { Button } from 'components/shared/Button/Button';
-import Modal from 'components/Modal/Modal.jsx';
 import ModalLogin from '../ModalLogin/ModalLogin';
+import Modal from 'components/Modal/Modal.jsx';
 
 const schema = Yup.object().shape({
   email: Yup.string().email('Invalid email').required('Email is required'),
@@ -26,6 +26,7 @@ const ModalRegister = ({ close }) => {
     console.log(values);
     dispatch(signup(values));
     resetForm();
+    // setIsModalOpen(false);
   };
 
   return (
@@ -57,14 +58,15 @@ const ModalRegister = ({ close }) => {
           placeholder="Password"
         />
         <ErrorMessage name="passwordConfirm" />
-        <Button type="submit" name="modal" h="44" onClick={close}>
+        <Button
+          type="submit"
+          name="modal"
+          h="44"
+          onClick={() => setIsModalOpen(false)}
+        >
           Register
         </Button>
-        <a
-          href="#login"
-          id="register-link"
-          onClick={() => setIsModalOpen(true)}
-        >
+        <a href="#login" id="login-link" onClick={() => setIsModalOpen(true)}>
           Login
         </a>
         {isModalOpen && (
