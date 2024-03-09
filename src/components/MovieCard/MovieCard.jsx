@@ -26,7 +26,6 @@ export const MovieCard = ({ item }) => {
       <div>
         <MovieImg
           id={item.id}
-          // className={css.movie_img}
           src={url}
           alt={item.original_title}
           loading="lazy"

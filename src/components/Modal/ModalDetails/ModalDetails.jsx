@@ -15,7 +15,7 @@ import {
 import { Title } from 'components/shared/Title/Title';
 import { Button } from 'components/shared/Button/Button';
 
-const ModalDetails = ({ item }) => {
+const ModalDetails = ({ item, approve }) => {
   const {
     poster_path,
     original_title,
@@ -91,10 +91,22 @@ const ModalDetails = ({ item }) => {
         </Title>
         <MovieOvervie>{overview}</MovieOvervie>
         <ModalNav>
-          <Button id="watched" type="submit" name="modal" h="44">
+          <Button
+            id="watched"
+            type="submit"
+            name="modal"
+            h="44"
+            onClick={approve}
+          >
             Add to watched
           </Button>
-          <Button id="queue" type="submit" name="modal" h="44">
+          <Button
+            id="queue"
+            type="submit"
+            name="modal"
+            h="44"
+            onClick={approve}
+          >
             Add to queue
           </Button>
         </ModalNav>

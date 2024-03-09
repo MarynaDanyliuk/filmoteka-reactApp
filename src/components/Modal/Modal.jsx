@@ -29,16 +29,10 @@ const Modal = ({ close, h, children, approve }) => {
   }, [closeModal]);
 
   return createPortal(
-    <StyledModal id="movie" h={h} onClick={closeModal}>
+    <StyledModal h={h} onClick={closeModal}>
       <ModalBody>
         <ModalContent h={h}>
-          <ModalClose
-            onClick={e => {
-              e.stopPropagation();
-              close();
-            }}
-            type="button"
-          >
+          <ModalClose onClick={close} type="button">
             X
           </ModalClose>
           {children}
@@ -52,3 +46,8 @@ const Modal = ({ close, h, children, approve }) => {
 export default Modal;
 
 // className={css.modal_close}
+
+// onClick={e => {
+//   e.stopPropagation();
+//   close();
+// }}

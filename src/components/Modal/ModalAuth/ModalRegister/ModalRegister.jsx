@@ -1,11 +1,12 @@
 import * as Yup from 'yup';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import { Formik, ErrorMessage } from 'formik';
 
 import { StyledForm, StyledField } from './ModalRegister.styles';
 import { signup } from '../../../../redux/auth/authOperations';
-
+import { isUserLogin } from '../../../../redux/auth/authSelectors';
 import { Button } from 'components/shared/Button/Button';
 import ModalLogin from '../ModalLogin/ModalLogin';
 import Modal from 'components/Modal/Modal.jsx';
@@ -18,16 +19,26 @@ const schema = Yup.object().shape({
 const initialValues = { email: '', password: '', passwordConfirm: '' };
 
 const ModalRegister = ({ close }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
 
+  const isLogin = useSelector(isUserLogin);
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
     dispatch(signup(values));
     resetForm();
-    // setIsModalOpen(false);
+    close();
   };
+
+  const toggleModal = () => {
+    close();
+    setIsModalLoginOpen(prevState => !prevState);
+  };
+
+  if (isLogin) {
+    return <Navigate to="/" />;
+  }
 
   return (
     <Formik
@@ -58,28 +69,17 @@ const ModalRegister = ({ close }) => {
           placeholder="Password"
         />
         <ErrorMessage name="passwordConfirm" />
-        <Button
-          type="submit"
-          name="modal"
-          h="44"
-          onClick={() => setIsModalOpen(false)}
-        >
+        <Button type="submit" name="modal" h="44">
           Register
         </Button>
-        <a href="#login" id="login-link" onClick={() => setIsModalOpen(true)}>
+        <a href="#login" id="login-link" onClick={() => toggleModal()}>
           Login
         </a>
-        {isModalOpen && (
-          <Modal
-            h="fit-content"
-            close={() => setIsModalOpen(false)}
-            approve={() => {
-              console.log('rere');
-            }}
-          >
-            <ModalLogin />
+        {isModalLoginOpen ? (
+          <Modal h="fit-content" close={close}>
+            <ModalLogin close={close} />
           </Modal>
-        )}
+        ) : null}
       </StyledForm>
     </Formik>
   );

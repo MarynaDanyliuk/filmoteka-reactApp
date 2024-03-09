@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
 
@@ -19,11 +19,9 @@ const schema = Yup.object().shape({
 });
 
 const initialValues = { email: '', password: '' };
-// redux / movies / moviesSelectors;
 
 const ModalLogin = ({ close }) => {
-  // const [state, setState] = useState({ ...initialValues });
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalRegisterOpen, setIsModalRegisterOpen] = useState(false);
 
   const dispatch = useDispatch();
   const isLogin = useSelector(isUserLogin);
@@ -32,23 +30,13 @@ const ModalLogin = ({ close }) => {
     console.log(values);
     dispatch(login(values));
     resetForm();
-    // const { email, password } = values;
-    // setState({ ...initialValues });
-    // if (isDublicate(email)) {
-    //   alert(`${email} is alredy in contacts!`);
-    //   setState({ email, password });
-    //   return false;
-    // }
+    close();
   };
 
-  // const isDublicate = email => {
-  //   const normalizedName = email.toLowerCase();
-  //   const result = isUserLogin.find(({ email }) => {
-  //     return email.toLowerCase() === normalizedName;
-  //   });
-
-  //   return Boolean(result);
-  // };
+  const toggleModalRegister = () => {
+    setIsModalRegisterOpen(prevState => !prevState);
+    // console.log('open modal Register');
+  };
 
   if (isLogin) {
     return <Navigate to="/" />;
@@ -68,7 +56,6 @@ const ModalLogin = ({ close }) => {
           placeholder="Login"
         />
         <ErrorMessage name="email" />
-
         <StyledField
           type="password"
           name="password"
@@ -76,34 +63,66 @@ const ModalLogin = ({ close }) => {
           placeholder="Password"
         />
         <ErrorMessage name="password" />
-        <Button type="submit" name="modal" h="44" onClick={close}>
+        <Button type="submit" name="modal" h="44">
           Login
         </Button>
-        <a
-          href="#register"
-          onClick={() => setIsModalOpen(true)}
-          id="register-link"
-          // className={css.nav_link}
-        >
+        <Link href="#register" id="register-link" onClick={toggleModalRegister}>
           Register
-        </a>
-        {isModalOpen && (
-          <Modal
-            h="fit-content"
-            close={() => setIsModalOpen(false)}
-            approve={() => {
-              console.log('rere');
-            }}
-          >
-            <ModalRegister />
+        </Link>
+        {isModalRegisterOpen ? (
+          <Modal h="fit-content" close={() => setIsModalRegisterOpen(false)}>
+            <ModalRegister close={() => setIsModalRegisterOpen(false)} />
           </Modal>
-        )}
+        ) : null}
       </StyledForm>
     </Formik>
   );
 };
 
 export default ModalLogin;
+
+// const [state, setState] = useState({ ...initialValues });
+// const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
+
+// () => setIsModalRegisterOpen(false);
+// () => setIsModalRegisterOpen(false)
+
+/* {isModalRegisterOpen ? (
+          <Modal h="fit-content" close={() => setIsModalRegisterOpen(false)}>
+            <ModalRegister close={() => setIsModalRegisterOpen(false)} />
+          </Modal>
+        ) : (
+          <Modal>
+            <ModalLogin close={() => setIsModalLoginOpen(false)} />
+          </Modal>
+        )} */
+
+/* {isModalRegisterOpen ? (
+          <Modal h="fit-content" close={() => setIsModalRegisterOpen(false)}>
+            <ModalRegister close={() => setIsModalRegisterOpen(false)} />
+          </Modal>
+        ) : (
+          <Modal h="fit-content" close={() => setIsModalLoginOpen(false)}>
+            <ModalLogin close={() => setIsModalLoginOpen(false)} />
+          </Modal>
+        )} */
+
+// const isDublicate = email => {
+//   const normalizedName = email.toLowerCase();
+//   const result = isUserLogin.find(({ email }) => {
+//     return email.toLowerCase() === normalizedName;
+//   });
+
+//   return Boolean(result);
+// };
+
+// const { email, password } = values;
+// setState({ ...initialValues });
+// if (isDublicate(email)) {
+//   alert(`${email} is alredy in contacts!`);
+//   setState({ email, password });
+//   return false;
+// }
 
 // import css from './ModalLogin.module.css';
 // _________________________________________

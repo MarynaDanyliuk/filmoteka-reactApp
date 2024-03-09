@@ -1,7 +1,10 @@
-import SearchForm from './SearchForm/SearchForm';
-import Icon from '../shared/Icon/Icon';
-import NavigationLibrary from './NavigationLibrary/NavigationLibrary';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+
+import Icon from '../shared/Icon/Icon';
+
+import SearchForm from './SearchForm/SearchForm';
+import NavigationLibrary from './NavigationLibrary/NavigationLibrary';
 import Modal from '../Modal/Modal';
 import ModalLogin from '../Modal/ModalAuth/ModalLogin/ModalLogin';
 import { Container } from 'components/shared/Container/Container';
@@ -12,8 +15,13 @@ import {
   StyledNavLink,
 } from './Header.styles';
 
+import { isUserLogin } from '../../redux/auth/authSelectors';
+
 export const Header = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const isLogin = useSelector(isUserLogin);
+  const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <HeaderContainer>
       <Container>
@@ -25,20 +33,17 @@ export const Header = () => {
           <HeaderList>
             <StyledNavLink to="/">Home</StyledNavLink>
             <StyledNavLink
-              to="/library/watched"
-              onClick={() => setIsModalOpen(true)}
+              to={isLogin ? '/library/watched' : '/'}
+              onClick={() =>
+                isLogin ? setIsModalLoginOpen(false) : setIsModalLoginOpen(true)
+              }
             >
               My Library
             </StyledNavLink>
-            {isModalOpen && (
-              <Modal
-                h="fit-content"
-                close={() => setIsModalOpen(false)}
-                approve={() => {
-                  console.log('rere');
-                }}
-              >
-                <ModalLogin />
+
+            {isModalLoginOpen && (
+              <Modal h="fit-content" close={() => setIsModalLoginOpen(false)}>
+                <ModalLogin close={() => setIsModalLoginOpen(false)} />
               </Modal>
             )}
           </HeaderList>
@@ -49,6 +54,25 @@ export const Header = () => {
     </HeaderContainer>
   );
 };
+
+/* {isModalOpen && (
+              <Modal h="fit-content" close={() => setIsModalOpen(false)}>
+                <ModalLogin close={() => setIsModalOpen(false)} />
+              </Modal>
+            )} */
+
+// approve={() => {
+//   console.log('rere');
+// }}
+
+// const openModalLogin = () => {
+//   return isLogin ? setIsModalOpen(false) : setIsModalOpen(true);
+//   // if (!isLogin) {
+//   //   setIsModalOpen(true);
+//   // } else {
+//   //   setIsModalOpen(false);
+//   // }
+// };
 
 // export default Header;
 

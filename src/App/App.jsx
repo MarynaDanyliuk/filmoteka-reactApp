@@ -7,6 +7,8 @@ import { Header } from '../components/Header/Header';
 import { SharedLayout } from '../components/SharedLayout/SharedLayout';
 
 import PrivateRoute from '../Routes/PrivateRoutes/PrivateRoutes';
+import RestrictedRoute from '../Routes/RestrictedRoutes/RestrictedRoutes';
+import ModalRegister from 'components/Modal/ModalAuth/ModalRegister/ModalRegister';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 // const LibraryPage = lazy(() => import('../pages/LibraryPage/LibraryPage'));
@@ -14,6 +16,8 @@ const LibraryWatched = lazy(() =>
   import('../pages/LibraryWatched/LibraryWatched')
 );
 const LibraryQueue = lazy(() => import('../pages/LibraryQueue/LibraryQueue'));
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
+const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
 export const App = () => {
@@ -23,6 +27,15 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
+          {/* <Route
+            path="/library"
+            element={
+              <PrivateRoute
+                redirectTo="/library/watched"
+                component={<LibraryWatched />}
+              />
+            }
+          /> */}
           <Route
             path="/library"
             element={
@@ -31,7 +44,7 @@ export const App = () => {
                 component={<LibraryWatched />}
               />
             }
-          />
+          ></Route>
           <Route path="/library/watched" element={<LibraryWatched />} />
           <Route path="/library/queue" element={<LibraryQueue />} />
           <Route path="*" element={<NotFoundPage />} />
@@ -40,6 +53,53 @@ export const App = () => {
     </Theme>
   );
 };
+
+// export const App = () => {
+//   return (
+//     <Theme>
+//       <Header />
+//       <Routes>
+//         <Route path="/" element={<SharedLayout />}>
+//           <Route index element={<HomePage />} />
+//           <Route
+//             path="/register"
+//             element={
+//               <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
+//             }
+//           />
+//           <Route
+//             path="/login"
+//             element={
+//               <RestrictedRoute redirectTo="/" component={<LoginPage />} />
+//             }
+//           />
+//           <Route
+//             path="/library"
+//             element={
+//               <PrivateRoute
+//                 redirectTo="/login"
+//                 component={<LibraryWatched />}
+//               />
+//             }
+//           />
+//           <Route
+//             path="/library"
+//             element={
+//               <PrivateRoute
+//                 redirectTo="/login"
+//                 component={<LibraryWatched />}
+//               />
+//             }
+//           ></Route>
+//           <Route path="/library/watched" element={<LibraryWatched />} />
+//           <Route path="/library/queue" element={<LibraryQueue />} />
+
+//           <Route path="*" element={<NotFoundPage />} />
+//         </Route>
+//       </Routes>
+//     </Theme>
+//   );
+// };
 
 /* <Route
             path="/library"

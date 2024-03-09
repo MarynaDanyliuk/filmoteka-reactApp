@@ -52,6 +52,7 @@ const HomePage = () => {
 
   return (
     <>
+      {/* <SearchForm /> */}
       <h1>Home page</h1>
       {items.length > 0 && <Gallery items={items} />}
       {loading && <p>...loading</p>}
