@@ -7,8 +7,8 @@ import { Header } from '../components/Header/Header';
 import { SharedLayout } from '../components/SharedLayout/SharedLayout';
 
 import PrivateRoute from '../Routes/PrivateRoutes/PrivateRoutes';
-import RestrictedRoute from '../Routes/RestrictedRoutes/RestrictedRoutes';
-import ModalRegister from 'components/Modal/ModalAuth/ModalRegister/ModalRegister';
+// import RestrictedRoute from '../Routes/RestrictedRoutes/RestrictedRoutes';
+// import ModalRegister from 'components/Modal/ModalAuth/ModalRegister/ModalRegister';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 // const LibraryPage = lazy(() => import('../pages/LibraryPage/LibraryPage'));
@@ -16,8 +16,8 @@ const LibraryWatched = lazy(() =>
   import('../pages/LibraryWatched/LibraryWatched')
 );
 const LibraryQueue = lazy(() => import('../pages/LibraryQueue/LibraryQueue'));
-const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
-const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
+// const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
+// const RegisterPage = lazy(() => import('../pages/RegisterPage/RegisterPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFoundPage/NotFoundPage'));
 
 export const App = () => {
