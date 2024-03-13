@@ -19,15 +19,15 @@ import { isUserLogin } from '../../redux/auth/authSelectors';
 
 export const Header = () => {
   const isLogin = useSelector(isUserLogin);
-  const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <HeaderContainer>
       <Container>
         <HeaderNav>
           <StyledNavLink to="/">
-            <Icon id="icon-film" />
+            <Icon id="icon-film" style={{ marginRight: '8px' }} />
             Filmoteka
           </StyledNavLink>
           <HeaderList>
@@ -35,15 +35,14 @@ export const Header = () => {
             <StyledNavLink
               to={isLogin ? '/library/watched' : '/'}
               onClick={() =>
-                isLogin ? setIsModalLoginOpen(false) : setIsModalLoginOpen(true)
+                isLogin ? setIsModalOpen(false) : setIsModalOpen(true)
               }
             >
               My Library
             </StyledNavLink>
-
-            {isModalLoginOpen && (
-              <Modal h="fit-content" close={() => setIsModalLoginOpen(false)}>
-                <ModalLogin close={() => setIsModalLoginOpen(false)} />
+            {isModalOpen && (
+              <Modal h="fit-content" close={() => setIsModalOpen(false)}>
+                <ModalLogin close={() => setIsModalOpen(false)} />
               </Modal>
             )}
           </HeaderList>

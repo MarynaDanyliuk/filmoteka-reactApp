@@ -19,7 +19,11 @@ const schema = Yup.object().shape({
 const initialValues = { email: '', password: '', passwordConfirm: '' };
 
 const ModalRegister = ({ close }) => {
-  const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
+  // const [isModalLoginOpen, setIsModalLoginOpen] = useState(false);
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const [isModalActive, setModalActive] = useState(true);
 
   const isLogin = useSelector(isUserLogin);
   const dispatch = useDispatch();
@@ -31,9 +35,13 @@ const ModalRegister = ({ close }) => {
     close();
   };
 
-  const toggleModal = () => {
-    close();
-    setIsModalLoginOpen(prevState => !prevState);
+  const toggleModal = event => {
+    setModalActive(true);
+    setIsModalOpen(prevState => !prevState);
+
+    // close();
+    // console.log(close);
+    // setIsModalLoginOpen(prevState => !prevState);
   };
 
   if (isLogin) {
@@ -72,14 +80,19 @@ const ModalRegister = ({ close }) => {
         <Button type="submit" name="modal" h="44">
           Register
         </Button>
-        <a href="#login" id="login-link" onClick={() => toggleModal()}>
+        <a href="#login" id="login-link" onClick={toggleModal}>
           Login
         </a>
-        {isModalLoginOpen ? (
+        {isModalOpen && isModalActive && (
           <Modal h="fit-content" close={close}>
             <ModalLogin close={close} />
           </Modal>
-        ) : null}
+        )}
+        {/* {isModalLoginOpen ? (
+          <Modal h="fit-content" close={() => setIsModalLoginOpen(false)}>
+            <ModalLogin close={() => setIsModalLoginOpen(false)} />
+          </Modal>
+        ) : null} */}
       </StyledForm>
     </Formik>
   );

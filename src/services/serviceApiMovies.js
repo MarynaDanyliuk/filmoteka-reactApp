@@ -1,14 +1,45 @@
 import axios from 'axios';
-import authInstance from './serviceApiAuth';
+// import authInstance from './serviceApiAuth';
 const API_KEY = '6de1479941bef67a0c224787b78603f1';
 const BASE_URL = 'https://api.themoviedb.org/3/';
 
 const instance = axios.create({
   baseURL: 'https://api.themoviedb.org/3/',
+  params: {
+    _page: 1,
+    _limit: 4,
+  },
 });
 
-// export const getAllBooks = async () => {
-//   const { data } = await booksInstance.get('/');
+// const instance = axios.create({
+//   baseURL: 'https://jsonplaceholder.typicode.com/posts',
+//   params: {
+//     _limit: 4,
+//   },
+// });
+
+// export const searchPosts = async (q, _page = 1) => {
+//   const { data } = await instance.get('/', {
+//     params: {
+//       q,
+//       _page,
+//     },
+//   });
+//   return data;
+// };
+
+// export const getAllPosts = async () => {
+//   const { data } = await instance.get('/');
+//   return data;
+// };
+
+// export const getPostById = async id => {
+//   const { data } = await instance.get(`/${id}`);
+//   return data;
+// };
+
+// export const getCommentByPostId = async id => {
+//   const { data } = await instance.get(`/${id}/comments`);
 //   return data;
 // };
 
@@ -26,48 +57,44 @@ export const getAllMovies = async () => {
   return await response.json().results;
 };
 
-// export const getWatchedMoviesByUser = async key => {
-//   const { data } = await authInstance.get('/library/watched');
-//   // console.log(data);
-//   return data;
-// };
-
-// export const getQueueMoviesByUser = async key => {
-//   const { data } = await authInstance.get('/library/queue');
-//   // console.log(data);
-//   return data;
-// };
-
-// const contactsInstance = axios.create({
-//   baseURL: 'https://63fdea50cd13ced3d7c21a98.mockapi.io/contacts',
-// });
-
-export const getAllMoviesByUserCollection = async () => {
-  const { data } = await authInstance.get(`/library`);
-  // console.log(data);
+export const searchMovies = async (query, _page = 1) => {
+  const { data } = await instance.get(
+    `/search/movie?api_key=${API_KEY}&query=${query}&include_adult=false&language=en-US&page=1`,
+    {
+      params: {
+        query,
+        _page,
+      },
+    }
+  );
   return data;
 };
 
-export const addMovie = async (data, key) => {
-  const { data: result } = await authInstance.post(`/library/${key}`, data);
-  return result;
-};
-
-export const deleteMovie = async (id, key) => {
-  const { data } = await authInstance.delete(`library/${key}/${id}`);
-  // console.log(data);
+export const addMovies = async (query, _page = 1) => {
+  const { data } = await instance.get(
+    `/search/movie?api_key=${API_KEY}&query=${query}&include_adult=false&language=en-US&page=1`,
+    {
+      params: {
+        query,
+        _page,
+      },
+    }
+  );
   return data;
 };
 
-// export const addBook = async data => {
-//   const { data: result } = await booksInstance.post('/', data);
-//   return result;
-// };
-
-// export const deleteBook = async id => {
-//   const { data } = await booksInstance.delete(`/${id}`);
-//   return data;
-// };
+export const deleteMovie = async (query, _page = 1) => {
+  const { data } = await instance.get(
+    `/search/movie?api_key=${API_KEY}&query=${query}&include_adult=false&language=en-US&page=1`,
+    {
+      params: {
+        query,
+        _page,
+      },
+    }
+  );
+  return data;
+};
 
 // _____________________ async fetch CLASS _____________________________
 
@@ -213,3 +240,38 @@ export async function fetchGenresListByIds() {
   );
   return response.data.genres;
 }
+
+// ____________________________________________
+
+// const contactsInstance = axios.create({
+//   baseURL: 'https://63fdea50cd13ced3d7c21a98.mockapi.io/contacts',
+// });
+
+// export const getAllMoviesByUserCollection = async () => {
+//   const { data } = await authInstance.get(`/library`);
+//   // console.log(data);
+//   return data;
+// };
+
+// export const addMovie = async (data, key) => {
+//   const { data: result } = await authInstance.post(`/library/${key}`, data);
+//   return result;
+// };
+
+// export const deleteMovie = async (id, key) => {
+//   const { data } = await authInstance.delete(`library/${key}/${id}`);
+//   // console.log(data);
+//   return data;
+// };
+
+// export const getWatchedMoviesByUser = async key => {
+//   const { data } = await authInstance.get('/library/watched');
+//   // console.log(data);
+//   return data;
+// };
+
+// export const getQueueMoviesByUser = async key => {
+//   const { data } = await authInstance.get('/library/queue');
+//   // console.log(data);
+//   return data;
+// };

@@ -7,5 +7,5 @@ export const Svg = styled.svg`
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
-  margin-right: 8px;
+  /* margin-right: 8px; */
 `;

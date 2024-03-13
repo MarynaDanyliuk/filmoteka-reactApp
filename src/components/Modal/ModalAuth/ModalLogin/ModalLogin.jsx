@@ -1,8 +1,8 @@
 import * as Yup from 'yup';
-import { useState } from 'react';
-import { Navigate, Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
 import { Formik, ErrorMessage } from 'formik';
+import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { StyledForm, StyledField } from './ModalLogin.styles';
 import { login } from '../../../../redux/auth/authOperations';
@@ -21,7 +21,8 @@ const schema = Yup.object().shape({
 const initialValues = { email: '', password: '' };
 
 const ModalLogin = ({ close }) => {
-  const [isModalRegisterOpen, setIsModalRegisterOpen] = useState(false);
+  // const [isModalRegisterOpen, setIsModalRegisterOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const dispatch = useDispatch();
   const isLogin = useSelector(isUserLogin);
@@ -33,8 +34,13 @@ const ModalLogin = ({ close }) => {
     close();
   };
 
-  const toggleModalRegister = () => {
-    setIsModalRegisterOpen(prevState => !prevState);
+  const toggleModal = () => {
+    // setIsModalRegisterOpen(true);
+
+    setIsModalOpen(prevState => !prevState);
+    // setIsModalLoginOpen(false);
+    // setIsModalRegisterOpen(prevState => !prevState);
+    // close();
     // console.log('open modal Register');
   };
 
@@ -66,14 +72,19 @@ const ModalLogin = ({ close }) => {
         <Button type="submit" name="modal" h="44">
           Login
         </Button>
-        <Link href="#register" id="register-link" onClick={toggleModalRegister}>
+        <a href="#register" id="register-link" onClick={toggleModal}>
           Register
-        </Link>
-        {isModalRegisterOpen ? (
+        </a>
+        {isModalOpen && (
+          <Modal h="fit-content" close={close}>
+            <ModalRegister close={close} />
+          </Modal>
+        )}
+        {/* {isModalRegisterOpen ? (
           <Modal h="fit-content" close={() => setIsModalRegisterOpen(false)}>
             <ModalRegister close={() => setIsModalRegisterOpen(false)} />
           </Modal>
-        ) : null}
+        ) : null} */}
       </StyledForm>
     </Formik>
   );
