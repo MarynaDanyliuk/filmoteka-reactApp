@@ -65,4 +65,4 @@ const MoviesSearch = () => {
   );
 };
 
-export default PostsSearch;
+export default MoviesSearch;

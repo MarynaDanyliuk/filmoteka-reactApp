@@ -1,7 +1,8 @@
 import * as Yup from 'yup';
 import { Formik, ErrorMessage } from 'formik';
 // import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+
+// import { useDispatch } from 'react-redux';
 
 import { StyledForm, StyledField } from './SearchForm.styles';
 
@@ -21,7 +22,8 @@ const SearchForm = () => {
   // const [query, setQuery] = useState('');
   // const [items, setItems] = useState([]);
   // const [page, setPage] = useState(1);
-  const dispatch = useDispatch();
+  // ______________________________________
+  // const dispatch = useDispatch();
 
   const handleSubmit = (query, { resetForm }) => {
     console.log(query);
